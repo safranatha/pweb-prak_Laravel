@@ -18,7 +18,7 @@ Route::get('/welcome', function(){
 });
 
 Route::get('/', function(){
-    return view('');
+    return view('Landing.index');
 });
 
 Route::resource('user', UserController::class);

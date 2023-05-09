@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Landing Page</title>
     <link
-      href="../Env/bootstrap/css/bootstrap.css"
+      href="front/css/bootstrap.css"
       rel="stylesheet">
-    <link rel="stylesheet" href="stylesheet.css" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
   </head>
   <body>
     <!-- Navbar -->
@@ -94,7 +94,7 @@
             <div class="col-md-4">
               <div class="card">
                 <img
-                  src="asset/images/invent.jpg"
+                  src="Image/Image/invent.jpg"
                   class="card-img-top"
                   alt="project1" />
                 <div class="card-body">
@@ -105,7 +105,7 @@
             <div class="col-md-4">
               <div class="card">
                 <img
-                  src="asset/images/cashier.jpg"
+                  src="Image/Image/cashier.jpg"
                   class="card-img-top"
                   alt="project1" />
                 <div class="card-body">
@@ -116,7 +116,7 @@
             <div class="col-md-4">
               <div class="card">
                 <img
-                  src="asset/images/report.jpg"
+                  src="Image/Image/report.jpg"
                   class="card-img-top"
                   alt="project1" />
                 <div class="card-body">
