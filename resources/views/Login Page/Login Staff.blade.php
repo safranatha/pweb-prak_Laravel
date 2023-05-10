@@ -16,7 +16,7 @@
       <p class=" mt-4" style="font-size: 18px;">Please input username and password before login</p>
 
 
-      <form action="../Staff_Page/Staff_Dashboard.html" method="post" class="w-25 mt-2 needs-validation" novalidate>
+      <form action="Staff_Payment" method="get" class="w-25 mt-2 needs-validation" novalidate>
 
         <div class="mb-4 d-flex flex-row">
           <img id="user-icon" src="Image/Vector/User.svg" class="icon" alt="User Icon" style="width: 15px; margin-right: 10px;">

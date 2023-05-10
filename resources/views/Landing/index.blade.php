@@ -45,7 +45,7 @@
               <a href="User_Option_Page" class="btn btn-dark me-2"
                 >Login</a
               >
-              <a href="../Sign Up Page/Register.html" class="btn btn-dark ms-2"
+              <a href="Register_Page" class="btn btn-dark ms-2"
                 >Sign Up</a
               >
             </form>

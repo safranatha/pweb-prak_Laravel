@@ -27,42 +27,42 @@
                     </a>
                 </div>
                 <div id="Payment-Menu" class="py-3 menu-option mt-3">
-                    <a href="Sales_Page.html" class="d-flex align-items-center text-decoration-none">
+                    <a href="Admin_Sales_Page" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Payment.svg">
                         <span class="text-dark">Penjualan</span>
 
                     </a>
                 </div>
                 <div id="Stok-Menu" class="py-3 menu-option mt-3 d-flex a bg-dark rounded-pill">
-                    <a href="Stock.html" class="d-flex align-items-center text-decoration-none">
+                    <a href="Admin_Stock_Barang" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3 bg-light" src="Image/Vector/Stuff.svg">
                         <span class="text-light">Stok Barang</span>
                     </a>
                 </div>
 
                 <div id="Supplier-Menu" class="py-3 menu-option mt-3">
-                    <a href="Supplier.html" class="d-flex align-items-center text-decoration-none">
+                    <a href="Admin_Supplier" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Supplier.svg">
                         <span class="text-dark">Supplier</span>
                     </a>
                 </div>
 
                 <div id="Report-Menu" class="py-3 menu-option mt-3">
-                    <a href="Report.html" class="d-flex align-items-center text-decoration-none">
+                    <a href="Admin_Report" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Report.svg">
                         <span class="text-dark">Report</span>
                     </a>
                 </div>
 
                 <div id="Akun-Menu" class="py-3 menu-option mt-3">
-                    <a href="User_Page.html" class="d-flex align-items-center text-decoration-none">
+                    <a href="Admin_Account" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="Image/Vector/User.svg">
                         <span class="text-dark">Akun</span>
                     </a>
                 </div>
 
                 <div id="SignOut-Menu" class="py-3 menu-option mt-3">
-                    <a href="../Login Page/Login.html" class="d-flex align-items-center text-decoration-none">
+                    <a href="Landing_Page" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="Image/Vector/SignOut.svg">
                         <span class="text-dark">Sign Out</span>
                     </a>
