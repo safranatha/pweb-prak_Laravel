@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Login Page</title>
-  <link rel="stylesheet" href="Env/bootstrap/css/bootstrap.css" />
-  <link rel="stylesheet" href="Env/Css/LoginRegister.css" />
-  <link rel="icon" href="Env/Image/minimarket.png" />
+  <link rel="stylesheet" href="front/css/bootstrap.css" />
+  <link rel="stylesheet" href="css/LoginRegister.css"/>
+  <link rel="icon" href="Image/minimarket.png" />
 </head>
 
 <body class="d-flex flex-column vh-100" style="background-color: #e5e5e5">
   <div class="container-fluid d-flex flex-column justify-content-center align-items-center vh-100">
-    <form action="Login Page/Login.html" class="w-100 d-flex justify-content-center align-items-center">
+    <form action="Admin_Login" class="w-100 d-flex justify-content-center align-items-center">
       <button id="Login-button" type="submit" class="btn btn-primary w-50 fw-semibold">
         Login As Admin
       </button type="submit">
     </form>
 
-    <form action="Login Page/Login Staff.html" class="w-100 d-flex justify-content-center align-items-center">
+    <form action="Staff_Login" class="w-100 d-flex justify-content-center align-items-center">
     <button id="Login-button" type="submit" class="btn btn-primary w-50 fw-semibold mt-5">
         Login As Staff
     </button>

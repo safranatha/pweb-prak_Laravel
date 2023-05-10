@@ -16,7 +16,7 @@
       <p class=" mt-4" style="font-size: 18px;">Please input username and password before login</p>
 
 
-      <form action="../Admin_Page/Admin_Dashboard.html" method="post" class="w-25 mt-2 needs-validation" novalidate>
+      <form action="Admin_Dashboard" method="get" class="w-25 mt-2 needs-validation" novalidate>
 
         <div class="mb-4 d-flex flex-row">
           <img id="user-icon" src="Image/Vector/User.svg" class="icon" alt="User Icon" style="width: 15px; margin-right: 10px;">
@@ -37,7 +37,7 @@
             
           </div>
         </div>
-        <a href="../Sign Up Page/Register.html"><label class="form-check-label mb-4">Dont have an account
+        <a href="Register"><label class="form-check-label mb-4">Dont have an account
             yet?</label></a>
         <button id="Login-button" type="submit" class="btn btn-primary w-100 fw-semibold">
             Login

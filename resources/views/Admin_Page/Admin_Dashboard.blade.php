@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin || Dashboard</title>
-  <link rel="stylesheet" href="../Env/bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="../Env/Css/AdminDash.css">
-  <link rel="icon" href="../Env/Image/minimarket.png">
+  <link rel="stylesheet" href="front/css/bootstrap.css">
+  <link rel="stylesheet" href="css/AdminDash.css">
+  <link rel="icon" href="Image/Image/minimarket.png">
   <script src="https://kit.fontawesome.com/e9e26f3697.js" crossorigin="anonymous"></script>
 </head>
 
@@ -17,54 +17,54 @@
     <div class="row">
       <div id="sidebar" class="col-md-2 bg-transparent position-fixed h-100">
         <div class=" d-flex flex-row gap-2 align-items-center justify-content-center mt-2">
-          <img class="Icon-Nav-Title" src="../Env/Image/minimarket.png">
+          <img class="Icon-Nav-Title" src="Image/Image/minimarket.png">
           <h5 class="text-center py-3">Payment & Inventory App</h5>
         </div>
         <div id="Dashboard-Menu"
           class="py-3  rounded-pill d-flex align-items-center justify-content-start menu-option mt-5">
           <a href="#" class="d-flex align-items-center text-decoration-none text-light">
-            <img id="Home-Icon" class="Icon-Nav  ms-5 me-3" src="../Env/Vector/Home.svg">
+            <img id="Home-Icon" class="Icon-Nav  ms-5 me-3" src="Image/Vector/Home.svg">
             <span class="Desc-Menu" class="text-dark">Dashboard</span>
           </a>
         </div>
         <div id="Payment-Menu" class="py-3 menu-option mt-3">
-          <a href="Sales_Page.html" class="d-flex align-items-center text-decoration-none">
-            <img class="Icon-Nav ms-5 me-3" src="../Env/Vector/Payment.svg">
+          <a href="{{ route('Admin_Sales_Page') }} " class="d-flex align-items-center text-decoration-none">
+            <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Payment.svg">
             <span class="text-dark">Penjualan</span>
 
           </a>
         </div>
         <div id="Stok-Menu" class="py-3 menu-option mt-3">
-          <a href="Stock.html" class="d-flex align-items-center text-decoration-none">
-            <img class="Icon-Nav ms-5 me-3" src="../Env/Vector/Stuff.svg">
+          <a href="Admin_Stock_Barang" class="d-flex align-items-center text-decoration-none">
+            <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Stuff.svg">
             <span class="text-dark">Stok Barang</span>
           </a>
         </div>
 
         <div id="Supplier-Menu" class="py-3 menu-option mt-3">
-          <a href="Supplier.html" class="d-flex align-items-center text-decoration-none">
-            <img class="Icon-Nav ms-5 me-3" src="../Env/Vector/Supplier.svg">
+          <a href="Admin_Supplier" class="d-flex align-items-center text-decoration-none">
+            <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Supplier.svg">
             <span class="text-dark">Supplier</span>
           </a>
         </div>
 
         <div id="Report-Menu" class="py-3 menu-option mt-3">
           <a href="Report.html" class="d-flex align-items-center text-decoration-none">
-            <img class="Icon-Nav ms-5 me-3" src="../Env/Vector/Report.svg">
+            <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Report.svg">
             <span class="text-dark">Report</span>
           </a>
         </div>
 
         <div id="Akun-Menu" class="py-3 menu-option mt-3">
           <a href="User_Page.html" class="d-flex align-items-center text-decoration-none">
-            <img class="Icon-Nav ms-5 me-3" src="../Env/Vector/User.svg">
+            <img class="Icon-Nav ms-5 me-3" src="Image/Vector/User.svg">
             <span class="text-dark">Akun</span>
           </a>
         </div>
 
         <div id="SignOut-Menu" class="py-3 menu-option mt-3">
-          <a href="../page_antara.html" class="d-flex align-items-center text-decoration-none">
-            <img class="Icon-Nav ms-5 me-3" src="../Env/Vector/SignOut.svg">
+          <a href="Landing_Page" class="d-flex align-items-center text-decoration-none">
+            <img class="Icon-Nav ms-5 me-3" src="Image/Vector/SignOut.svg">
             <span class="text-dark">Sign Out</span>
           </a>
         </div>
@@ -78,7 +78,7 @@
             <div class="navbar-nav ms-auto">
               <p class="mt-2">Muhammad Alfariza Rasendria</p>
               <a class="nav-link" href="User_Page.html">
-                <img class="Icon-Nav" src="../Env/Vector/Admin-Icon.svg">
+                <img class="Icon-Nav" src="Image/Vector/Admin-Icon.svg">
               </a>
             </div>
           </div>
@@ -135,7 +135,7 @@
 
       </div>
 
-      <script src="../Env/bootstrap/js/bootstrap.bundle.js"></script>
+      <script src="front/js/bootstrap.bundle.js"></script>
 
 </body>
 
