@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PenjualanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,17 +14,17 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/welcome', function(){
-    return view('welcome');
-});
+// Route::get('/', function(){
+//     return view('index');
+// });
 
 Route::get('/', function(){
     return view('Landing.index');
 });
 
-Route::get('/Landing_Page', function(){
-    return view('Landing.index');
-});
+// Route::get('/Landing_Page', function(){
+//     return view('Landing.index');
+// });
 
 Route::get('/User_Option_Page', function(){
     return view('User_Option_Page.page_antara');
@@ -46,30 +47,30 @@ Route::get('/Staff_Payment', function(){
     return view('Staff_Page.Staff_Payment');
 });
 
-Route::get('/Admin_Sales_Page', function(){
-    return view('Admin_Page.Sales_Page');
-});
-Route::get('/Admin_Stock_Barang', function(){
-    return view('Admin_Page.Stock');
-});
-Route::get('/Admin_Supplier', function(){
-    return view('Admin_Page.Supplier');
-});
-Route::get('/Admin_Report', function(){
-    return view('Admin_Page.Report');
-});
-Route::get('/Admin_Account', function(){
-    return view('Admin_Page.Admin_Account');
-});
-Route::get('/Staff_Account', function(){
-    return view('Staff_Page.Staff_Account');
-});
+Route::get('/Admin_Sales_Page', [PenjualanController::class, 'index']);
+// Route::get('/Admin_Stock_Barang', function(){
+//     return view('Admin_Page.Stock');
+// });
+// Route::get('/Admin_Supplier', function(){
+//     return view('Admin_Page.Supplier');
+// });
+// Route::get('/Admin_Report', function(){
+//     return view('Admin_Page.Report');
+// });
+// Route::get('/Admin_Account', function(){
+//     return view('Admin_Page.Admin_Account');
+// });
+// Route::get('/Staff_Account', function(){
+//     return view('Staff_Page.Staff_Account');
+// });
 Route::get('/Staff_Stock', function(){
     return view('Staff_Page.Staff_Stock_Page');
 });
 
 
 Route::resource('user', UserController::class);
+
+Route::resource('penjualan', PenjualanController::class);
 
 
 

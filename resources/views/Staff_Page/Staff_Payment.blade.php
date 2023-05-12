@@ -64,32 +64,40 @@
         </nav>
         <div class="container w-50 d-flex flex-column justify-content-center gap-5 bg-light mt-5 mb-1">
           <h1 class="text-center mt-5">Add Data</h1>
-          <form action="" method="post" class="d-flex flex-column gap-4">
-            <label for="Id_Barang"> Id Barang<br>
+          <form action="{{route('penjualan.store')}}" method="post" class="d-flex flex-column gap-4">
+            @csrf
+
+            {{-- <label for="Id_Barang"> Id Barang<br>
               <input id="Id_Barang" class="w-100" type="text" required>
             </label>
             <label for="Id_Barang"> Nama Barang<br>
               <input id="Id_Barang" class="w-100" type="text" required>
-            </label>
+            </label> --}}
             
-            <label for="Id_Barang"> Jumlah barang<br>
-              <input id="Id_Barang" class="w-100" type="number" required>
-            </label>
-            <label for="Id_Barang">Tanggal<br>
-              <input id="Id_Barang" class="w-100" type="date" required>
-            </label>
+            <div class="col-md-3">
+              <p>Total</p>
+              <input type="number" class="form-control mb-2" name="Total" id="Total" required>
+          </div>
+          <div class="col-md-3">
+              <p>Date</p>
+              <input type="date" class="form-control mb-2" name="Date" id="Date" required>
+          </div>
             <label for="Id_Barang">Metode Pembayaran<br>
-              <select id="" class="w-100">
-                <option value="">Choose Payment Method</option>
-                <option value="">Cash</option>
-                <option value="">Debit</option>
+              <select id="method" name="Method" class="w-100">
+                <option value="1">Cash</option>
+                <option value="0">Debit</option>
+              </select>
+            </label>
+
+            <label for="Id_Barang">Status<br>
+              <select id="Status" name="Status" class="w-100">
+                <option value="1">yes</option>
+                <option value="0">no</option>
               </select>
             </label>
 
             <h3 class="mt-4">Total Bayar :</h3>
             <h5 class="text-danger">200000</h5>
-            <h3 class="mt-4">No Nota :</h3>
-            <h5>01256343252443</h5>
 
             <div class="d-flex flex-row gap-5 justify-content-start mt-5">
               <button type="submit" class="bg-success px-3 text-light">Add</button>

@@ -125,45 +125,17 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($penjualan as $item)
                             <tr>
                                 <td>1</td>
-                                <td>045212554</td>
-                                <td>300000</td>
-                                <td>15/03/2023</td>
-                                <td>Cash</td>
+                                <td>{{$item->Total}}</td>
+                                <td>{{$item->Date}}</td>
+                                <td>{{$item->Method}}</td>
+                                <td>{{$item->Status}}</td>
                                 <td>Lunas</td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>045212554</td>
-                                <td>300000</td>
-                                <td>15/03/2023</td>
-                                <td>Cash</td>
-                                <td>Lunas</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>045212554</td>
-                                <td>300000</td>
-                                <td>15/03/2023</td>
-                                <td>Cash</td>
-                                <td>Lunas</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>045212554</td>
-                                <td>300000</td>
-                                <td>15/03/2023</td>
-                                <td>Cash</td>
-                                <td>Lunas</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>045212554</td>
-                                <td>300000</td>
-                                <td>15/03/2023</td>
-                                <td>Cash</td>
-                                <td>Lunas</td>
+                            
+                            @endforeach
                 </div>
 
                 
