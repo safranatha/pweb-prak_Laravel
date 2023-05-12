@@ -13,7 +13,7 @@ class PenjualanController extends Controller
      */
     public function index()
     {
-        $penjualan = Penjualan::all()->get();
+        $penjualan = Penjualan::all();
         return view('Admin_Page.Sales_Page',['penjualan' => $penjualan]);
 
     }
