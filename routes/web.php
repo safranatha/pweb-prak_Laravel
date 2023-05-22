@@ -43,10 +43,12 @@ Route::get('/Register_Page', function(){
 Route::get('/Admin_Dashboard', function(){
     return view('Admin_Page.Admin_Dashboard');
 });
+
+//Create for table penjualan
 Route::get('/Staff_Payment', function(){
     return view('Staff_Page.Staff_Payment');
 });
-
+//route penjualan
 Route::get('/Admin_Sales_Page', [PenjualanController::class, 'index']);
 // Route::get('/Admin_Stock_Barang', function(){
 //     return view('Admin_Page.Stock');

@@ -117,7 +117,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Invoice Id</th>
+                                <th>Inovice id</th>
                                 <th>Total</th>
                                 <th>Date</th>
                                 <th>Metode Pembayaran</th>
@@ -125,20 +125,24 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $i = $penjualan->firstItem(); ?>
                             @foreach ($penjualan as $item)
-                            <tr>
-                                <td>1</td>
-                                <td>{{$item->Total}}</td>
-                                <td>{{$item->Date}}</td>
-                                <td>{{$item->Method}}</td>
-                                <td>{{$item->Status}}</td>
-                                <td>Lunas</td>
-                            </tr>
-                            
+                                <tr>
+                                    <td>{{ $i }}</td>
+                                    <td>{{ $item->id }}</td>
+                                    <td>{{ $item->Total }}</td>
+                                    <td>{{ $item->Date }}</td>
+                                    <td>{{ $item->Method }}</td>
+                                    <td>{{ $item->Status }}</td>
+                                </tr>
+                                <?php $i++; ?>
                             @endforeach
+                        </tbody>
+                    </table>
+                    {{$penjualan->links()}}
                 </div>
 
-                
+
 
 
             </div>

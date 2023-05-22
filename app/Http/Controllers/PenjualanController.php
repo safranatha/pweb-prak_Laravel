@@ -13,7 +13,8 @@ class PenjualanController extends Controller
      */
     public function index()
     {
-        $penjualan = Penjualan::all();
+        $penjualan = Penjualan::orderBy('Date','desc')->paginate(3);
+        
         return view('Admin_Page.Sales_Page',['penjualan' => $penjualan]);
 
     }
