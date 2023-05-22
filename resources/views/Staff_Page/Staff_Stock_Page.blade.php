@@ -61,32 +61,31 @@
         </nav>
         <div class="container w-50 d-flex flex-column justify-content-center gap-5 bg-light mt-5 mb-5">
           <h1 class="text-center mt-5">Add Data</h1>
-          <form action="" method="post" class="d-flex flex-column gap-4">
-            <label for="Id_Barang"> Id_Barang<br>
-              <input id="Id_Barang" class="w-100" type="text" required>
-            </label>
+          <form action="{{route('barang.store')}}" id="formBarang" method="post" class="d-flex flex-column gap-4">
+            @csrf
+
             <label for="Id_Barang"> Nama_Barang<br>
-              <input id="Id_Barang" class="w-100" type="text" required>
+              <input id="Id_Barang" name="Nama_barang" class="w-100" type="text" required>
             </label>
-            <label for="Id_Barang">Kategori Barang<br>
-              <input id="Id_Barang" class="w-100" type="text" required>
+            <label for="k_Barang">Kategori Barang<br>
+              <input id="Id_Barang" name="Kategori_barang" class="w-100" type="text" required>
             </label>
-            <label for="Id_Barang"> Jumlah Barang<br>
-              <input id="Id_Barang" class="w-100" type="number" required>
+            <label for="j_Barang"> Jumlah Barang<br>
+              <input id="Id_Barang" name="Jumlah_barang" class="w-100" type="number" required>
             </label>
-            <label for="Id_Barang">Tanggal<br>
-              <input id="Id_Barang" class="w-100" type="date" required>
+            <label for="t_Barang">Tanggal<br>
+              <input id="Id_Barang" name="Tanggal" class="w-100" type="date" required>
             </label>
 
-            <label for="Id_Barang">Supplier<br>
-              <input id="Id_Barang" class="w-100" type="text" required>
+            <label for="s_Barang">Supplier<br>
+              <input id="Id_Barang" name="Supplier" class="w-100" type="text" required>
             </label>
 
 
 
             <div class="d-flex flex-row gap-5 justify-content-start mt-5">
               <button type="submit" class="bg-success px-3 text-light">Add</button>
-              <button class="bg-danger px-3 text-light">Cancel</button>
+              <button id="cancelButton" class="bg-danger px-3 text-light">Cancel</button>
             </div>
           </form>
 
@@ -96,3 +95,11 @@
 </body>
 
 </html>
+
+<script>
+    document.getElementById('cancelButton').addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('formBarang').reset();
+      document.getElementById('Id_Barang').focus();
+    });
+  </script>

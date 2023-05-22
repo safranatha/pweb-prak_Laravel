@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\PenjualanController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\PenjualanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,10 +70,26 @@ Route::get('/Staff_Stock', function(){
     return view('Staff_Page.Staff_Stock_Page');
 });
 
+Route::get('/Admin_Stock_Barang', function(){
+    return view('Admin_Page.Stock');
+});
+Route::get('/StockMasuk', function(){
+    return view('Admin_Page.Stock_stockMasuk');
+})->name('StockMasuk');
+Route::get('/StockKeluar', function(){
+    return view('Admin_Page.Stock_stockKeluar');
+});
+
 
 Route::resource('user', UserController::class);
 
 Route::resource('penjualan', PenjualanController::class);
+
+Route::resource('barang', BarangController::class);
+
+Route::get('/tampilkanbarang/{id}',[BarangController::class,'show'])->name('tampilkanbarang');
+Route::get('/Hapusbarang/{id}',[BarangController::class,'destroy'])->name('Hapusbarang');
+Route::post('/updatebarang/{id}',[BarangController::class,'update'])->name('Updatebarang');
 
 
 
