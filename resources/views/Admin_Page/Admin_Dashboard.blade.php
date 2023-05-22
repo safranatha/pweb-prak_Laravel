@@ -28,21 +28,21 @@
           </a>
         </div>
         <div id="Payment-Menu" class="py-3 menu-option mt-3">
-          <a href="Admin_Sales_Page " class="d-flex align-items-center text-decoration-none">
+          <a href="{{ route('penjualan.index')}}" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Payment.svg">
             <span class="text-dark">Penjualan</span>
 
           </a>
         </div>
         <div id="Stok-Menu" class="py-3 menu-option mt-3">
-          <a href="Admin_Stock_Barang" class="d-flex align-items-center text-decoration-none">
+          <a href="{{ route('AdminStockPage') }}" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Stuff.svg">
             <span class="text-dark">Stok Barang</span>
           </a>
         </div>
 
         <div id="Supplier-Menu" class="py-3 menu-option mt-3">
-          <a href="Admin_Supplier" class="d-flex align-items-center text-decoration-none">
+          <a href="{{ route('supplier.index') }}" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Supplier.svg">
             <span class="text-dark">Supplier</span>
           </a>
@@ -56,14 +56,14 @@
         </div>
 
         <div id="Akun-Menu" class="py-3 menu-option mt-3">
-          <a href="Admin_Account" class="d-flex align-items-center text-decoration-none">
+          <a href="{{ route('AdminAccount') }}" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/User.svg">
             <span class="text-dark">Akun</span>
           </a>
         </div>
 
         <div id="SignOut-Menu" class="py-3 menu-option mt-3">
-          <a href="Landing_Page" class="d-flex align-items-center text-decoration-none">
+          <a href="{{ route('LandingPage') }}" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/SignOut.svg">
             <span class="text-dark">Sign Out</span>
           </a>

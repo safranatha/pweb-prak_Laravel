@@ -20,34 +20,33 @@
           <h5 class="text-center py-3">Payment & Inventory App</h5>
         </div>
         <div id="Dashboard-Menu"
-          class="py-3 bg-dark rounded-pill d-flex align-items-center justify-content-start menu-option mt-5">
-          <a href="#" class="d-flex align-items-center text-decoration-none text-light">
-            <img id="Home-Icon" class="Icon-Nav bg-light ms-5 me-3" src="Image/Vector/Payment.svg">
-            <span class="Desc-Menu text-light">Pembayaran</span>
+          class="py-3 rounded-pill d-flex align-items-center justify-content-start menu-option mt-5">
+          <a href="{{ route('StaffPayment') }}" class="d-flex align-items-center text-decoration-none text-light">
+            <img id="Home-Icon" class="Icon-Nav ms-5 me-3" src="Image/Vector/Payment.svg">
+            <span class="Desc-Menu text-dark">Pembayaran</span>
           </a>
         </div>
         <div id="Payment-Menu" class="py-3 menu-option">
-          <a href="{{ route('StaffStock') }}" class="d-flex align-items-center text-decoration-none">
+          <a href="Staff_Stock" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Stuff.svg">
             <span class="text-dark">Penerimaan barang</span>
           </a>
         </div>
 
-        <div id="Akun-Menu" class="py-3 menu-option mt-4 d-flex align-items-center rounded-pill">
-          <a href="{{ route('StaffSupplier') }}" class="d-flex align-items-center text-decoration-none ">
-            <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Supplier.svg">
-            <span class="text-dark">Tambah Supplier</span>
+        <div id="Akun-Menu" class=" bg-dark py-3 menu-option mt-4 d-flex align-items-center rounded-pill">
+          <a href="Staff_Account" class="d-flex align-items-center text-decoration-none ">
+            <img class="Icon-Nav ms-5 me-3 bg-light" src="Image/Vector/Supplier.svg">
+            <span class="text-light">Tambah Supplier</span>
           </a>
         </div>
 
 
-        <div id="Akun-Menu" class="py-3 menu-option mt-2">
+        <div id="Akun-Menu" class="py-3 menu-option mt-1">
           <a href="{{ route('StaffAccount') }}" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/User.svg">
             <span class="text-dark">Akun</span>
           </a>
         </div>
-
 
         <div id="SignOut-Menu" class="py-3 menu-option mt-3">
           <a href="{{ route('LandingPage') }}" class="d-flex align-items-center text-decoration-none">
@@ -72,7 +71,7 @@
         </nav>
         <div class="container w-50 d-flex flex-column justify-content-center gap-5 bg-light mt-5 mb-1">
           <h1 class="text-center mt-5">Add Data</h1>
-          <form action="{{route('penjualan.store')}}" method="post" class="d-flex flex-column gap-4">
+          <form action="{{route('supplier.store')}}" method="post" class="d-flex flex-column gap-4">
             @csrf
 
             {{-- <label for="Id_Barang"> Id Barang<br>
@@ -82,30 +81,32 @@
               <input id="Id_Barang" class="w-100" type="text" required>
             </label> --}}
 
-            <div class="col-md-3">
-              <p>Total</p>
-              <input type="number" class="form-control mb-2" name="Total" id="Total" required>
-          </div>
-          <div class="col-md-3">
-              <p>Date</p>
-              <input type="date" class="form-control mb-2" name="Date" id="Date" required>
-          </div>
-            <label for="Method">Metode Pembayaran<br>
-              <select id="method" name="Method" class="w-100">
+            <div class="col-md-3 w-100 px-4">
+              <p>Nama Supplier</p>
+              <input type="text" class="form-control mb-2" name="Nama_Supplier" id="Total" required>
+            </div>
+            <div class="col-md-3 w-100 px-4">
+              <p>Alamat Supplier</p>
+              <input type="text" class="form-control mb-2" name="Alamat_Supplier" id="Total" required>
+            </div>
+            <div class="col-md-3 w-100 px-4">
+              <p>Supplier Kategori</p>
+              <input type="text" class="form-control mb-2" name="Kategori_Supplier" id="Total" required>
+            </div>
+            <div class="col-md-3 w-100 px-4">
+              <p>Nomor Telefon</p>
+              <input type="number" class="form-control mb-2" name="NomorTelp" id="Total" required>
+            </div>
+
+            <label for="Method" class="w-100 px-4">Metode Pembayaran<br>
+              <select id="method" name="Metode_Pembayaran" class="w-100">
                 <option value="Cash">Cash</option>
                 <option value="Debit">Debit</option>
               </select>
             </label>
 
-            <label for="Status">Status<br>
-              <select id="Status" name="Status" class="w-100">
-                <option value="yes">yes</option>
-                <option value="no">no</option>
-              </select>
-            </label>
 
-            <h3 class="mt-4">Total Bayar :</h3>
-            <h5 class="text-danger">200000</h5>
+
 
             <div class="d-flex flex-row gap-5 justify-content-start mt-5">
               <button type="submit" class="bg-success px-3 text-light">Add</button>

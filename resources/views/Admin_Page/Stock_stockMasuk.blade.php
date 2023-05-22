@@ -120,9 +120,10 @@
                     <table class="table table-borderless  text-center">
                         <thead>
                             <tr>
-                                <th>No</th>
+                                <th>Nomor</th>
                                 <th>Id Barang</th>
                                 <th>Nama Barang</th>
+                                <th>Jumlah Barang</th>
                                 <th>Kategori Barang</th>
                                 <th>Tanggal Masuk</th>
                                 <th>Supplier</th>
@@ -135,6 +136,7 @@
                             @foreach ($barang as $item)
                                 <tr>
                                     <td>{{ /* $item->id */ $no++ }}</td>
+                                    <td>{{ $item->id}}</td>
                                     <td>{{ $item->Nama_barang }}</td>
                                     <td>{{ $item->Kategori_barang }}</td>
                                     <td>{{ $item->Jumlah_barang }}</td>

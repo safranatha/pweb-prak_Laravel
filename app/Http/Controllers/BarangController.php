@@ -32,7 +32,7 @@ class BarangController extends Controller
     public function store(StorebarangRequest $request)
     {
         Barang::create($request->all());
-        return redirect()->back()->with('success', 'Penjualan berhasil ditambahkan');
+        return redirect()->back()->with('success', 'Barang berhasil ditambahkan');
     }
 
     /**
