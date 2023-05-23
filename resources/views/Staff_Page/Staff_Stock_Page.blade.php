@@ -21,26 +21,33 @@
         </div>
         <div id="Dashboard-Menu"
           class="py-3  rounded-pill d-flex align-items-center justify-content-start menu-option  mt-5">
-          <a href="Staff_Payment" class="d-flex align-items-center text-decoration-none text-light">
+          <a href="{{ route('StaffPayment') }}" class="d-flex align-items-center text-decoration-none text-light">
             <img id="Home-Icon" class="Icon-Nav  ms-5 me-3" src="Image/Vector/Payment.svg">
             <span class="text-dark Desc-Menu">Pembayaran</span>
           </a>
         </div>
         <div id="Payment-Menu" class="py-3  menu-option">
-          <a href="Staff_Stock" class="bg-dark rounded-pill d-flex align-items-center text-decoration-none">
+          <a href="Staff_Stock" class="bg-dark rounded-pill d-flex align-items-center text-decoration-none p-1">
             <img class="Icon-Nav ms-5 me-3 bg-light" src="Image/Vector/Stuff.svg">
-            <span class="text-light">Penerimaan barang</span>
+            <span id="TextRow" class="text-light">Penerimaan barang</span>
           </a>
         </div>
 
-        <div id="Akun-Menu" class="py-3 menu-option mt-5">
-          <a href="Staff_Account" class="d-flex align-items-center text-decoration-none ">
+        <div id="Akun-Menu" class="py-3 menu-option mt-4 d-flex align-items-center rounded-pill">
+          <a href="{{ route('StaffSupplier') }}" class="d-flex align-items-center text-decoration-none ">
+            <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Supplier.svg">
+            <span class="text-dark">Tambah Supplier</span>
+          </a>
+        </div>
+
+        <div id="Akun-Menu" class="py-3 menu-option mt-2">
+          <a href="{{ route('StaffAccount') }}" class="d-flex align-items-center text-decoration-none ">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/User.svg">
             <span class="text-dark">Akun</span>
           </a>
         </div>
         <div id="SignOut-Menu" class="py-3 menu-option mt-3">
-          <a href="Landing_Page" class="d-flex align-items-center text-decoration-none">
+          <a href="{{ route('LandingPage') }}" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/SignOut.svg">
             <span class="text-dark">Sign Out</span>
           </a>

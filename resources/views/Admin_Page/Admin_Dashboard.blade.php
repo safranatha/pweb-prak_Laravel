@@ -28,21 +28,21 @@
           </a>
         </div>
         <div id="Payment-Menu" class="py-3 menu-option mt-3">
-          <a href="Admin_Sales_Page " class="d-flex align-items-center text-decoration-none">
+          <a href="{{ route('penjualan.index')}}" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Payment.svg">
             <span class="text-dark">Penjualan</span>
 
           </a>
         </div>
         <div id="Stok-Menu" class="py-3 menu-option mt-3">
-          <a href="Admin_Stock_Barang" class="d-flex align-items-center text-decoration-none">
+          <a href="{{ route('AdminStockPage') }}" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Stuff.svg">
             <span class="text-dark">Stok Barang</span>
           </a>
         </div>
 
         <div id="Supplier-Menu" class="py-3 menu-option mt-3">
-          <a href="Admin_Supplier" class="d-flex align-items-center text-decoration-none">
+          <a href="{{ route('supplier.index') }}" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Supplier.svg">
             <span class="text-dark">Supplier</span>
           </a>
@@ -56,14 +56,14 @@
         </div>
 
         <div id="Akun-Menu" class="py-3 menu-option mt-3">
-          <a href="Admin_Account" class="d-flex align-items-center text-decoration-none">
+          <a href="{{ route('AdminAccount') }}" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/User.svg">
             <span class="text-dark">Akun</span>
           </a>
         </div>
 
         <div id="SignOut-Menu" class="py-3 menu-option mt-3">
-          <a href="Landing_Page" class="d-flex align-items-center text-decoration-none">
+          <a href="{{ route('LandingPage') }}" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/SignOut.svg">
             <span class="text-dark">Sign Out</span>
           </a>
@@ -119,12 +119,12 @@
         <div id="container-bottom" class="container my-5 ms-3" style="height: 20%;">
           <div class="row gy-3 gap-5 h-100">
             <div class="d-flex flex-row justify-content-center align-items-center gap-4 w-100 m-0">
-              <a href="../Admin_Page/admin_dashboard_histPemb.html" class="w-75 h-50  text-decoration-none ">
+              <a href="{{ route('penjualan.index') }}" class="w-75 h-50  text-decoration-none ">
                 <div id="Amount-1" class="Dash-Option h-100 rounded d-flex justify-content-center align-items-center" style="box-shadow: 3px 3px 8px #888888;">
                   <p class="pt-3">History Pembayaran</p>
                 </div>
               </a>
-              <a href="../Admin_Page/admin_dashboard_stockBarang.html" class="w-75 h-50  text-decoration-none ">
+              <a href="{{ route('AdminStok') }}" class="w-75 h-50  text-decoration-none ">
                 <div id="Amount-2" class="Dash-Option h-100 rounded d-flex justify-content-center align-items-center" style="box-shadow: 3px 3px 8px #888888;">
                   <p class="pt-3">Stock Barang</p>
                 </div>

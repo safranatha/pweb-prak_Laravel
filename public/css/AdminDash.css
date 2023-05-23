@@ -22,7 +22,7 @@ body{
 
 .navbar{
     background-color:white;
-    max-width:100%; 
+    max-width:100%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -58,23 +58,27 @@ body{
 
 #Amount-1,#Amount-2,#Amount-3{
     color: #353935;
-    
+
 }
 
 #Amount-1{
     background-color: var(--color-gradient-stop);
+}
 
+#Amount-1:hover,#Amount-2:hover {
+    background-color: darkblue;
+    color: white;
 }
 
 #Amount-2{
     background-color: var(--color-gradient-stop);
-    
+
 }
 
 
 #Amount-3{
     background-color: var(--color-gradient-stop);
-    
+
 }
 
 #main-content{

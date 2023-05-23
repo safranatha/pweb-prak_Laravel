@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin || Account</title>
     <link rel="stylesheet" href="{{ asset('front/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/Supplier.css') }}">
+    <link rel="stylesheet" href="{{ asset('Css/Stock_masukKeluar.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/SalesPage.css') }}">
     <link rel="icon" href="{{ asset('Image/Image/minimarket.png') }}">
 </head>
 
@@ -21,13 +22,13 @@
                 </div>
                 <div id="Dashboard-Menu"
                     class="py-3  rounded-pill d-flex align-items-center justify-content-start menu-option mt-5">
-                    <a href="Admin_Dashboard" class="d-flex align-items-center text-decoration-none text-dark">
+                    <a href="Admin_Dashboard.html" class="d-flex align-items-center text-decoration-none text-dark">
                         <img id="Home-Icon" class="Icon-Nav  ms-5 me-3" src="{{ asset('Image/Vector/Home.svg') }}">
                         <span class="Desc-Menu" class="text-dark">Dashboard</span>
                     </a>
                 </div>
                 <div id="Payment-Menu" class="py-3 menu-option mt-3">
-                    <a href="Admin_Sales_Page" class="d-flex align-items-center text-decoration-none">
+                    <a href="Sales_Page.html" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="{{ asset('Image/Vector/Payment.svg') }}">
                         <span class="text-dark">Penjualan</span>
 
@@ -48,21 +49,21 @@
                 </div>
 
                 <div id="Report-Menu" class="py-3 menu-option mt-3">
-                    <a href="Admin_Report" class="d-flex align-items-center text-decoration-none">
+                    <a href="Report.html" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="{{ asset('Image/Vector/Report.svg') }}">
                         <span class="text-dark">Report</span>
                     </a>
                 </div>
 
                 <div id="Akun-Menu" class="py-3 menu-option mt-3">
-                    <a href="Admin_Account" class="d-flex align-items-center text-decoration-none">
+                    <a href="User_Page.html" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="{{ asset('Image/Vector/User.svg') }}">
                         <span class="text-dark">Akun</span>
                     </a>
                 </div>
 
                 <div id="SignOut-Menu" class="py-3 menu-option mt-3">
-                    <a href="Landing_Page" class="d-flex align-items-center text-decoration-none">
+                    <a href="../Login Page/Login.html" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="{{ asset('Image/Vector/SignOut.svg') }}">
                         <span class="text-dark">Sign Out</span>
                     </a>
@@ -84,72 +85,45 @@
                 </nav>
                 <!-- end of navbar -->
 
+                    <div class="container w-50 d-flex flex-column justify-content-center gap-5 bg-light mt-5 mb-5">
+                        <h1 class="text-center mt-5">Edit Stok supplier Masuk</h1>
+                        <form action="{{ route('Updatesupplier', $supplier->id) }}" id="formsupplier" method="POST"
+                            class="d-flex flex-column gap-4">
+                            @csrf
+                            <label for="Id_supplier" class="w-100 px-2"> Nama_supplier<br>
+                                <input id="Id_supplier" value="{{ $supplier->Nama_Supplier }}" name="Nama_Supplier"
+                                    class="w-100" type="text" required>
+                            </label>
 
-                <div class="container ms-3 my-5" id="table-title">
-                    <h5 class="pb-4">Daftar Supplier</h5>
-                    <form action="" method="post">
-                        <div class="row gy-3">
-                            <div class="col-md-3">
-                                <p>Id Supplier</p>
-                                <input type="text" class="form-control mb-2" placeholder="Input Id Supplier" required>
+                            <label for="j_supplier" class="w-100 px-2"> Alamat supplier<br>
+                                <input id="Id_supplier" value="{{ $supplier->Alamat_Supplier }}" name="Alamat_Supplier"
+                                    class="w-100" type="text" required>
+                            </label>
+
+                            <label for="k_supplier" class="w-100 px-2">Kategori supplier<br>
+                                <input id="Id_supplier" value="{{ $supplier->Kategori_Supplier }}" name="Kategori_Supplier"
+                                    class="w-100" type="text" required>
+                            </label>
+                            <label for="t_supplier" class="w-100 px-2">Nomor Telefon<br>
+                                <input id="Id_supplier" value="{{ $supplier->NomorTelp }}" name="NomorTelp"
+                                    class="w-100" type="text" required>
+                            </label>
+
+                            <label for="Metode_supplier" class="w-100 px-2">Metode Pembayaran<br>
+                                <select id="Metode_supplier" value="{{ $supplier->Metode_Pembayaran}}" name="Metode_Pembayaran" class="w-100">
+                                  <option value="Cash">Cash</option>
+                                  <option value="Debit">Debit</option>
+                                </select>
+                            </label>
+                            <div class="d-flex flex-row gap-5 justify-content-start mt-5">
+                                <button type="submit" class="bg-success px-3 text-light">Edit</button>
+                                <button id="cancelButton" class="bg-danger px-3 text-light">Cancel</button>
                             </div>
-
-                            <div class="col-md-3">
-                                <p>Nama Supplier</p>
-                                <input type="text" class="form-control mb-2" placeholder="Input Nama Supplier" required>
-
-                            </div>
-                            <div class="col-md-3">
-                                <p>Tanggal</p>
-                                <input type="date" class="form-control mb-2" required>
-                            </div>
-                            <div class="col-md-3 mt-5 pt-3">
-                                <button type="submit" class="w-50 text-center">Search</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-                <div id="table-1" class="container my-5 ms-3">
-                    <table class="table table-borderless text-center">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Supplier Id</th>
-                                <th>Nama Supplier</th>
-                                <th>Alamat Supplier</th>
-                                <th>Kategori Supplier</th>
-                                <th>Nomor Telefon</th>
-                                <th>Metode Pembayaran</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @php
-                                $no = 1;
-                            @endphp
-                            @foreach ($supplier as $supplier)
-                            <tr>
-                                <td>{{ $no++ }}</td>
-                                <td>{{ $supplier->id }}</td>
-                                <td>{{ $supplier->Nama_Supplier }}</td>
-                                <td>{{ $supplier->Alamat_Supplier }}</td>
-                                <td>{{ $supplier->Kategori_Supplier }}</td>
-                                <td>{{ $supplier->NomorTelp }}</td>
-                                <td>{{ $supplier->Metode_Pembayaran }}</td>
-                                <td><a href="/tampilkansupplier/{{ $supplier->id }}" id="edit-delete-button"
-                                    type="button" class="btn btn-primary"><img id="edit-icon"
-                                        src="{{ asset('Icon/pen-solid.png') }}"> </td>
-                                <td><a href="/Hapussupplier/{{ $supplier->id }}" type="submit"
-                                        id="edit-delete-button" type="button" class="btn btn-danger"><img
-                                            id="delete-icon" src="{{ asset('Icon/trash-solid.png') }}"></button>
-                                </td>
-                            </tr>
-                            @endforeach
-
-
-                </div>
+                        </form>
+                    </div>
             </div>
-
+        </div>
+    </div>
 </body>
 
 </html>

@@ -6,9 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin || Dashboard</title>
-  <link rel="stylesheet" href="../Env/bootstrap/css/bootstrap.css">
-  <link rel="stylesheet" href="../Env/Css/AdminDash copy.css">
-  <link rel="icon" href="../Env/Image/minimarket.png">
+  <link rel="stylesheet" href="front/css/bootstrap.css">
+  <link rel="stylesheet" href="Css/AdminDash copy.css">
+  <link rel="icon" href="Image/Image/minimarket.png">
   <script src="https://kit.fontawesome.com/e9e26f3697.js" crossorigin="anonymous"></script>
 </head>
 
@@ -84,7 +84,7 @@
           </div>
         </nav>
         <!-- end of navbar -->
-        
+
 
         <div class="container" >
           <h5 class="pb-4 mt-5">History Pembayaran</h5>
@@ -113,7 +113,7 @@
           </form>
 
         </div>
-        
+
         <div class="container mt-3">
             <table class="table table-borderless  text-center">
                 <thead>
@@ -169,7 +169,7 @@
         </div>
 
       <script src="../Env/bootstrap/js/bootstrap.bundle.js"></script>
-      
+
 </body>
 
 </html>

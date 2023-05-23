@@ -22,7 +22,7 @@
 
         <div id="Dashboard-Menu"
           class="py-3 mt-5 rounded-pill d-flex align-items-center justify-content-start menu-option">
-          <a href="Staff_Payment" class="d-flex align-items-center text-decoration-none text-light">
+          <a href="{{ route('StaffPayment') }}" class="d-flex align-items-center text-decoration-none text-light">
             <img id="Home-Icon" class="Icon-Nav  ms-5 me-3" src="Image/Vector/Payment.svg">
             <span class="text-dark Desc-Menu">Pembayaran</span>
           </a>
@@ -35,15 +35,23 @@
           </a>
         </div>
 
+        <div id="Akun-Menu" class="py-3 menu-option mt-4 d-flex align-items-center rounded-pill">
+            <a href="{{ route('StaffSupplier') }}" class="d-flex align-items-center text-decoration-none ">
+              <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Supplier.svg">
+              <span class="text-dark">Tambah Supplier</span>
+            </a>
+          </div>
 
-        <div id="Akun-Menu" class="py-3 menu-option mt-5 d-flex align-items-center rounded-pill bg-dark">
+
+        <div id="Akun-Menu" class="py-3 menu-option mt-1 d-flex align-items-center rounded-pill bg-dark">
           <a href="Staff_Account" class="d-flex align-items-center text-decoration-none ">
             <img class="Icon-Nav ms-5 me-3 bg-light" src="Image/Vector/User.svg">
             <span class="text-light">Akun</span>
           </a>
         </div>
+
         <div id="SignOut-Menu" class="py-3 menu-option mt-3">
-          <a href="Landing_Page" class="d-flex align-items-center text-decoration-none">
+          <a href="{{ route('LandingPage') }}"class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/SignOut.svg">
             <span class="text-dark">Sign Out</span>
           </a>
