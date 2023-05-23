@@ -43,8 +43,12 @@ Route::get('/Register_Page', function(){
     return view('Sign Up Page.Register');
 });
 
-Route::get('/Admin_Dashboard', function(){
-    return view('Admin_Page.Admin_Dashboard');
+
+
+Route::group(['middleware' => ['auth','hakakses:admin']],function(){
+    Route::get('/Admin_Dashboard', function(){
+        return view('Admin_Page.Admin_Dashboard');
+    });
 });
 
 //Create for table penjualan
