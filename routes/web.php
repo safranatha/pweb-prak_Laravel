@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\PenjualanController;
+use App\Http\Controllers\sessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +31,13 @@ Route::get('/', function(){
 Route::get('/User_Option_Page', function(){
     return view('User_Option_Page.page_antara');
 });
-Route::get('/Admin_Login', function(){
-    return view('Login Page.Login Admin');
-});
+// Route::get('/Admin_Login', function(){
+//     return view('Login Page.Login Admin');
+// });
+Route::get('/LoginAdmin',[sessionController::class,'index']);
+Route::post('/LoginAdmin/login',[sessionController::class,'login']);
+
+
 Route::get('/Staff_Login', function(){
     return view('Login Page.Login Staff');
 });
