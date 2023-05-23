@@ -59,9 +59,7 @@ Route::get('/Admin_Sales_Page', [PenjualanController::class, 'index']);
 // Route::get('/Admin_Supplier', function(){
 //     return view('Admin_Page.Supplier');
 // });
-// Route::get('/Admin_Report', function(){
-//     return view('Admin_Page.Report');
-// });
+
 // Route::get('/Admin_Account', function(){
 //     return view('Admin_Page.Admin_Account');
 // });
@@ -76,6 +74,10 @@ Route::view('/Admin_Stock_Barang', 'Admin_Page.Stock')->name('AdminStockPage');
 Route::view('/Admin_Account', 'Admin_Page.Admin_Account')->name('AdminAccount');
 Route::view('/Admin_Dashboard', 'Admin_Page.Admin_Dashboard')->name('AdminDashboard');
 Route::view('/Landing_Page', 'Landing.index')->name('LandingPage');
+Route::view('/Admin_Report', 'Admin_Page.Report')->name('AdminReport');
+Route::view('/Admin_Stok', 'Admin_Page.Stock')->name('AdminStok');
+Route::view('/StokKeluar', 'Admin_Page.Stock_stockKeluar')->name('AdminStokKeluar');
+
 
 
 Route::view('/Staff_Stock_Page','Staff_Page.Staff_Stock_Page')->name('StaffStock');

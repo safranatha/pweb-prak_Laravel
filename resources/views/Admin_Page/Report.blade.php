@@ -41,7 +41,7 @@
                 </div>
 
                 <div id="Supplier-Menu" class="py-3 menu-option mt-3">
-                    <a href="Admin_Supplier" class="d-flex align-items-center text-decoration-none">
+                    <a href="{{route('supplier.index')}}" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="/Image/Vector/Supplier.svg">
                         <span class="text-dark">Supplier</span>
                     </a>
@@ -87,7 +87,7 @@
                 <div id="container-bottom" class="container my-5 ms-3" style="height: 50%;">
                     <div class="row gy-3 gap-5 h-100 mt-5">
                         <div class="d-flex flex-row justify-content-center align-items-center gap-4 w-100 m-0">
-                            <a href="../Admin_Page/admin_dashboard_histPemb.html"
+                            <a href="{{ route('penjualan.index') }}"
                                 class="w-75 h-100  text-decoration-none ">
                                 <div id="Amount-1"
                                     class="Dash-Option h-75 rounded d-flex justify-content-center align-items-center">
@@ -100,16 +100,16 @@
 
                 <div class="row gy-3 gap-5 h-100">
                     <div class="d-flex flex-row justify-content-center align-items-center gap-4 w-100 m-0 p-0 h-50">
-                        <a href="../Admin_Page/Stock_stockMasuk.html" class="w-75 h-100 text-decoration-none ">
-                            <div id="Amount-1"
+                        <a href="{{ route('barang.index') }}" class="w-75 h-100 text-decoration-none ">
+                            <div id="Amount-2"
                                 class="Dash-Option h-75 rounded d-flex justify-content-center align-items-center">
                                 <p class="pt-3">Stok Masuk</p>
                             </div>
                         </a>
-                        <a href="../Admin_Page/Stock_stockKeluar.html" class="w-75 h-100 text-decoration-none ">
-                            <div id="Amount-2"
+                        <a href="{{ route('AdminStokKeluar') }}" class="w-75 h-100 text-decoration-none ">
+                            <div id="Amount-3"
                                 class="Dash-Option h-75 rounded d-flex justify-content-center align-items-center">
-                                <p class="pt-3">Stock Barang</p>
+                                <p class="pt-3">Stock Keluar</p>
                             </div>
                         </a>
                     </div>

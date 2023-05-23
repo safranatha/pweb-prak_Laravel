@@ -41,7 +41,7 @@
                 </div>
 
                 <div id="Supplier-Menu" class="py-3 menu-option mt-3">
-                    <a href="Admin_Supplier" class="d-flex align-items-center text-decoration-none">
+                    <a href="{{route('supplier.index')}}" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Supplier.svg">
                         <span class="text-dark">Supplier</span>
                     </a>
