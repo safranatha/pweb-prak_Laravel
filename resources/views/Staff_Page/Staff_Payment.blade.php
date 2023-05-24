@@ -99,8 +99,8 @@
 
             <label for="Status">Status<br>
               <select id="Status" name="Status" class="w-100">
-                <option value="yes">yes</option>
-                <option value="no">no</option>
+                <option value="Lunas">Lunas</option>
+                <option value="Belum Lunas">Belum Lunas</option>
               </select>
             </label>
 

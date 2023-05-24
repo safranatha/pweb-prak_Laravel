@@ -132,7 +132,7 @@
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->Total }}</td>
                                     <td>{{ $item->Date }}</td>
-                                    <td>{{ $item->Method }}</td>
+                                    <td>{{ $item->Method}}</td>
                                     <td>{{ $item->Status }}</td>
                                 </tr>
                                 <?php $i++; ?>

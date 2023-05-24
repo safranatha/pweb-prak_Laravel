@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\sessionController;
 use App\Models\Supplier;
 
 /*
@@ -35,6 +36,8 @@ Route::get('/User_Option_Page', function(){
 // Route::get('/Admin_Login', function(){
 //     return view('Login Page.Login Admin');
 // });
+Route::get('/LoginAdmin',[sessionController::class,'index']);
+Route::post('/LoginAdmin/login',[sessionController::class,'login']);
 Route::get('/LoginAdmin',[sessionController::class,'index']);
 Route::post('/LoginAdmin/login',[sessionController::class,'login']);
 

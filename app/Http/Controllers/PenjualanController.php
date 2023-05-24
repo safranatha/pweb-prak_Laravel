@@ -37,6 +37,7 @@ class PenjualanController extends Controller
         //     // 'Invoice_id'=>$request->Invoice_id,
             
         // ];
+        // dd($request->all());
         Penjualan::create($request->all());
         return redirect()->back()->with('success', 'Penjualan berhasil ditambahkan');
     }

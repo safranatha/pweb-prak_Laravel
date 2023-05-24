@@ -37,4 +37,11 @@ class sessionController extends Controller
             return 'gagal';
         }
     }
+
+    function create(){
+        
+    }
+    function regist(){
+        return view("Sign Up Page/Register");
+    }
 }

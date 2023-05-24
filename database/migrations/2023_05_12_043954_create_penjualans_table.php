@@ -16,8 +16,8 @@ return new class extends Migration
             $table->timestamps();
             $table-> integer('Total');
             $table-> date('Date');
-            $table-> String('Method');
-            $table-> String('Status');
+            $table-> enum('Method',['Cash','Debit']);
+            $table-> enum('Status',['Lunas','Belum Lunas']);
         });
     }
 
