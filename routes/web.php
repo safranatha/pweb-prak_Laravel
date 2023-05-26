@@ -22,7 +22,7 @@ use App\Models\Supplier;
 //     return view('index');
 // });
 
-Route::get('/', function(){
+Route::get('/', function () {
     return view('Landing.index');
 });
 
@@ -30,38 +30,59 @@ Route::get('/', function(){
 //     return view('Landing.index');
 // });
 
-Route::get('/User_Option_Page', function(){
+Route::get('/User_Option_Page', function () {
     return view('User_Option_Page.page_antara');
 });
 // Route::get('/Admin_Login', function(){
 //     return view('Login Page.Login Admin');
 // });
-Route::get('/LoginAdmin',[sessionController::class,'index'])->name('AdminLogin');
-Route::post('/LoginAdmin/login',[sessionController::class,'login']);
-Route::post('/LoginAdmin/login',[sessionController::class,'login']);
+Route::get('/LoginAdmin', [sessionController::class, 'index'])->name('AdminLogin');
+Route::post('/LoginAdmin/login', [sessionController::class, 'login']);
+Route::post('/LoginAdmin/login', [sessionController::class, 'login']);
 
-Route::get('/register',[sessionController::class,'Register'])->name('AdminRegister');
-Route::post('/registerAdmin',[sessionController::class,'registeruser'])->name('AdminRegisterPost');
+Route::get('/register', [sessionController::class, 'Register'])->name('AdminRegister');
+Route::post('/registerAdmin', [sessionController::class, 'registeruser'])->name('AdminRegisterPost');
+
+/* Route::route('/Adminregister', [sessionController::class, 'registeruser'])->name('AdminRegisterPost');
+Route::post('/registerAdmin', [sessionController::class, 'registeruser'])->name('AdminRegisterPost'); */
 
 
-Route::get('/Staff_Login', function(){
+Route::get('/Staff_Login', function () {
     return view('Login Page.Login Staff');
 });
 
-Route::get('/Register_Page', function(){
+Route::get('/Register_Page', function () {
     return view('Sign Up Page.Register');
 });
 
 
 
-Route::group(['middleware' => ['auth','hakakses:admin']],function(){
+/* Route::group(['middleware' => ['auth','hakakses:admin']],function(){
     Route::get('/Admin_Dashboard', function(){
         return view('Admin_Page.Admin_Dashboard');
     });
+}); */
+
+
+Route::middleware(['auth', 'user-role:Staff'])->group(function () {
+    Route::get('/Staff_Payment_Page', function () {
+        return view('Staff_Page.Staff_Payment');
+    })->name('StaffPayment');
 });
 
+Route::middleware(['auth', 'user-role:Admin'])->group(function () {
+    Route::get('/Admin_Dashboard', function () {
+        return view('Admin_Page.Admin_Dashboard');
+    })->name('AdminDashboard');
+});
+
+
+
+
+
+
 //Create for table penjualan
-Route::get('/Staff_Payment', function(){
+Route::get('/Staff_Payment', function () {
     return view('Staff_Page.Staff_Payment');
 });
 //route penjualan
@@ -79,7 +100,7 @@ Route::get('/Admin_Sales_Page', [PenjualanController::class, 'index']);
 // Route::get('/Staff_Account', function(){
 //     return view('Staff_Page.Staff_Account');
 // });
-Route::get('/Staff_Stock', function(){
+Route::get('/Staff_Stock', function () {
     return view('Staff_Page.Staff_Stock_Page');
 });
 
@@ -93,18 +114,18 @@ Route::view('/StokKeluar', 'Admin_Page.Stock_stockKeluar')->name('AdminStokKelua
 
 
 
-Route::view('/Staff_Stock_Page','Staff_Page.Staff_Stock_Page')->name('StaffStock');
-Route::view('/Staff_Payment_Page','Staff_Page.Staff_Payment')->name('StaffPayment');
-Route::view('/Staff_Supplier_Page','Staff_Page.Staff_Supplier')->name('StaffSupplier');
-Route::view('/Staff_Account_Page','Staff_Page.Staff_Account')->name('StaffAccount');
+Route::view('/Staff_Stock_Page', 'Staff_Page.Staff_Stock_Page')->name('StaffStock');
+Route::view('/Staff_Payment_Page', 'Staff_Page.Staff_Payment')->name('StaffPayment');
+Route::view('/Staff_Supplier_Page', 'Staff_Page.Staff_Supplier')->name('StaffSupplier');
+Route::view('/Staff_Account_Page', 'Staff_Page.Staff_Account')->name('StaffAccount');
 
 
 
 
-Route::get('/StockMasuk', function(){
+Route::get('/StockMasuk', function () {
     return view('Admin_Page.Stock_stockMasuk');
 })->name('StockMasuk');
-Route::get('/StockKeluar', function(){
+Route::get('/StockKeluar', function () {
     return view('Admin_Page.Stock_stockKeluar');
 });
 
@@ -117,15 +138,11 @@ Route::resource('barang', BarangController::class);
 
 Route::resource('supplier', SupplierController::class);
 
-Route::get('/tampilkanbarang/{id}',[BarangController::class,'show'])->name('tampilkanbarang');
-Route::get('/Hapusbarang/{id}',[BarangController::class,'destroy'])->name('Hapusbarang');
-Route::post('/updatebarang/{id}',[BarangController::class,'update'])->name('Updatebarang');
+Route::get('/tampilkanbarang/{id}', [BarangController::class, 'show'])->name('tampilkanbarang');
+Route::get('/Hapusbarang/{id}', [BarangController::class, 'destroy'])->name('Hapusbarang');
+Route::post('/updatebarang/{id}', [BarangController::class, 'update'])->name('Updatebarang');
 
 
-Route::get('/tampilkansupplier/{id}',[SupplierController::class,'show'])->name('tampilkansupplier');
-Route::get('/Hapussupplier/{id}',[SupplierController::class,'destroy'])->name('Hapussupplier');
-Route::post('/updatesupplier/{id}',[SupplierController::class,'update'])->name('Updatesupplier');
-
-
-
-
+Route::get('/tampilkansupplier/{id}', [SupplierController::class, 'show'])->name('tampilkansupplier');
+Route::get('/Hapussupplier/{id}', [SupplierController::class, 'destroy'])->name('Hapussupplier');
+Route::post('/updatesupplier/{id}', [SupplierController::class, 'update'])->name('Updatesupplier');

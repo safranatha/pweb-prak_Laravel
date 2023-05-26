@@ -20,7 +20,9 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
-            // $table->enum('role',['User','Admin'])->nullable();
+            // 0 = Staff 1 = admin
+            // $table->tinyInteger("role")->default(0);
+            $table->enum('role',['Staff','Admin']);
         });
     }
 

@@ -23,7 +23,8 @@ class sessionController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'NoTelp' => $request->NoTelp,
-            'remember_token' => Str::random(60)
+            'remember_token' => Str::random(60),
+            'role' => 'user',
         ]);
         return redirect()->route('AdminLogin');
     }
@@ -46,7 +47,12 @@ class sessionController extends Controller
         ];
         if (Auth::attempt($infologin)) {
             //success
-            return redirect('Admin_Dashboard')->with('success', 'Berhasil Login');
+            if (auth()->user()->role == 'Admin') {
+                return redirect()->route('AdminDashboard')->with('success', 'Berhasil Login');
+            }
+            else if(auth()->user()->role == 'Staff'){
+                return redirect()->route('StaffPayment')->with('success', 'Berhasil Login');
+            }
         } else {
             // return redirect('LoginAdmin')->withErrors('tidak valid');
             //gagal
