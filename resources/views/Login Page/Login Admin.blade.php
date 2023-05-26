@@ -21,7 +21,7 @@
         <div class="mb-4 d-flex flex-row">
           <img id="user-icon" src="Image/Vector/User.svg" class="icon" alt="User Icon" style="width: 15px; margin-right: 10px;">
           <div class="d-flex flex-column w-100">
-            <input type="text" name="email" class="form rounded  " id="Username_Login" placeholder="Username" required > 
+            <input type="email" name="email" class="form rounded  " id="Username_Login" placeholder="Email" required >
             <p id="Username_Valid" class="pt-2 ps-1" style="color: red;">
             </p>
           </div>
@@ -34,10 +34,10 @@
             <input type="password" name="password" class="form rounded " id="Password_Login" placeholder="Password" required>
             <p id="Password_Valid" class=" pt-2 ps-1" style="color: red;">
             </p>
-            
+
           </div>
         </div>
-        <a href="Register"><label class="form-check-label mb-4">Dont have an account
+        <a href="{{ route('AdminRegister') }}"><label class="form-check-label mb-4">Dont have an account
             yet?</label></a>
         <button id="Login-button" name="submit" type="submit" class="btn btn-primary w-100 fw-semibold">
             Login

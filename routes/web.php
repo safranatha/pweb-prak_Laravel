@@ -36,10 +36,12 @@ Route::get('/User_Option_Page', function(){
 // Route::get('/Admin_Login', function(){
 //     return view('Login Page.Login Admin');
 // });
-Route::get('/LoginAdmin',[sessionController::class,'index']);
+Route::get('/LoginAdmin',[sessionController::class,'index'])->name('AdminLogin');
 Route::post('/LoginAdmin/login',[sessionController::class,'login']);
-Route::get('/LoginAdmin',[sessionController::class,'index']);
 Route::post('/LoginAdmin/login',[sessionController::class,'login']);
+
+Route::get('/register',[sessionController::class,'Register'])->name('AdminRegister');
+Route::post('/registerAdmin',[sessionController::class,'registeruser'])->name('AdminRegisterPost');
 
 
 Route::get('/Staff_Login', function(){
