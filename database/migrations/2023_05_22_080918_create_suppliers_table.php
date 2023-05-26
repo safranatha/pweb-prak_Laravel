@@ -18,7 +18,7 @@ return new class extends Migration
             $table->String("Alamat_Supplier");
             $table->String("Kategori_Supplier");
             $table->String("NomorTelp");
-            $table->String("Metode_Pembayaran");
+            $table->enum('Metode_Pembayaran',['Cash','Debit']);
         });
     }
 
