@@ -45,7 +45,7 @@
               <a href="User_Option_Page" class="btn btn-dark me-2"
                 >Login</a
               >
-              <a href="Register_Page" class="btn btn-dark ms-2"
+              <a href="Regist_Option_Page" class="btn btn-dark ms-2"
                 >Sign Up</a
               >
             </form>
@@ -63,7 +63,7 @@
               <h1 class="tagline">
                 Aplikasi Management keuangan dan Inventory
               </h1>
-              
+
             </div>
           </div>
         </div>
