@@ -47,6 +47,8 @@ Route::get('/register', [sessionController::class, 'Register'])->name('AdminRegi
 Route::post('/registerStaff', [sessionController::class, 'registeruser'])->name('StaffRegisterPost');
 Route::post('/registerAdmin', [sessionController::class, 'registerAdmin'])->name('AdminRegisterPost');
 
+Route::get('/Logout', [sessionController::class, 'logout'])->name('Logout');
+
 
 
 Route::get('/RegisterAdminForm', function () {
@@ -132,7 +134,7 @@ Route::view('/StokKeluar', 'Admin_Page.Stock_stockKeluar')->name('AdminStokKelua
 
 
 Route::view('/Staff_Stock_Page', 'Staff_Page.Staff_Stock_Page')->name('StaffStock');
-Route::view('/Staff_Payment_Page', 'Staff_Page.Staff_Payment')->name('StaffPayment');
+// Route::view('/Staff_Payment_Page', 'Staff_Page.Staff_Payment')->name('StaffPayment');
 Route::view('/Staff_Supplier_Page', 'Staff_Page.Staff_Supplier')->name('StaffSupplier');
 Route::view('/Staff_Account_Page', 'Staff_Page.Staff_Account')->name('StaffAccount');
 

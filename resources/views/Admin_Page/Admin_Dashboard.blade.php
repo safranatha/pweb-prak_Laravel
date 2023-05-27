@@ -63,7 +63,7 @@
         </div>
 
         <div id="SignOut-Menu" class="py-3 menu-option mt-3">
-          <a href="{{ route('LandingPage') }}" class="d-flex align-items-center text-decoration-none">
+          <a href="{{ route('Logout') }}" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/SignOut.svg">
             <span class="text-dark">Sign Out</span>
           </a>
