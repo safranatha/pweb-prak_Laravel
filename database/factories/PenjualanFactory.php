@@ -19,8 +19,8 @@ class PenjualanFactory extends Factory
         return [
             'Total'=>fake()->randomDigitNotNull(),
             'Date'=>fake()->date(),
-            'Metode Pembayaran'=>fake()->boolean(),
-            'Status Pembayaran'=>fake()->boolean()
+            // 'Metode Pembayaran'=>fake()->boolean(),
+            // 'Status Pembayaran'=>fake()->boolean()
         ];
     }
 }
