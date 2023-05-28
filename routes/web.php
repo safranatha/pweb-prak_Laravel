@@ -32,10 +32,11 @@ Route::get('/', function () {
 
 Route::get('/User_Option_Page', function () {
     return view('User_Option_Page.page_antara');
-});
+})->name('Login_Option_Page');
+
 Route::get('/Regist_Option_Page', function () {
     return view('User_Option_Page.Registpage_antara');
-});
+})->name('Register_Option_Page');
 // Route::get('/Admin_Login', function(){
 //     return view('Login Page.Login Admin');
 // });
@@ -137,6 +138,7 @@ Route::view('/Staff_Stock_Page', 'Staff_Page.Staff_Stock_Page')->name('StaffStoc
 // Route::view('/Staff_Payment_Page', 'Staff_Page.Staff_Payment')->name('StaffPayment');
 Route::view('/Staff_Supplier_Page', 'Staff_Page.Staff_Supplier')->name('StaffSupplier');
 Route::view('/Staff_Account_Page', 'Staff_Page.Staff_Account')->name('StaffAccount');
+
 
 
 

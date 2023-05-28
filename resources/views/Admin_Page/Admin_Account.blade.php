@@ -19,8 +19,7 @@
                     <img class="Icon-Nav-Title" src="Image/Image/minimarket.png">
                     <h5 class="text-center py-3">Payment & Inventory App</h5>
                 </div>
-                <div id="Dashboard-Menu"
-                    class="py-3  rounded-pill d-flex align-items-center justify-content-start menu-option mt-5">
+                <div id="Dashboard-Menu" class="py-3  rounded-pill d-flex align-items-center justify-content-start menu-option mt-5">
                     <a href="{{ route('AdminDashboard') }}" class="d-flex align-items-center text-decoration-none text-dark">
                         <img id="Home-Icon" class="Icon-Nav  ms-5 me-3" src="Image/Vector/Home.svg">
                         <span class="Desc-Menu" class="text-dark">Dashboard</span>
@@ -78,33 +77,41 @@
                 <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
                     <p class=" mt-5 mb-3" style="font-size: 18px;">Please input username & password before change new password</p>
 
-                    <form action="Admin_Dashboard.html" method="POST" class="w-50 mt-2 mb-5 needs-validation " novalidate>
-                      <div class="mb-4 d-flex flex-row">
-                        <img id="user-icon" src="Image/Vector/User.svg" class="icon" alt="User Icon" style="width: 15px; margin-right: 10px;">
-                        <div class="d-flex flex-column w-100">
-                          <input type="text" class="form rounded  " id="Username_Login" placeholder="Username" required >
-                          <p id="Username_Valid" class="pt-2 ps-1" style="color: red;">
-                          </p>
+                    <form action=" {{ route('user.update', $User->first()->id ) }} " method="POST" class="w-50 mt-2 mb-5 needs-validation " novalidate>
+                        @method("put")
+                        @csrf
+                        @if (session('message'))
+                            <p style="color: green;">{{ session('message') }}</p>
+                            @endif
+                        <div class="mb-4 d-flex flex-row">
+                            <img id="user-icon" src="Image/Vector/User.svg" class="icon" alt="User Icon" style="width: 15px; margin-right: 10px;">
+                            <div class="d-flex flex-column w-100">
+                                <input type="text" class="form rounded" value="{{ old('email', Auth::user()->username) }}" name="username" id="Username_Login" placeholder="Username" required>
+                                <p id="Username_Valid" class="pt-2 ps-1" style="color: red;">
+                                </p>
+                            </div>
                         </div>
-                      </div>
 
-                      <div class="mb-4 d-flex">
-                        <img id="password-icon" src="Image/Vector/Lock.svg" class="icon" alt="User Icon" style="width: 15px; margin-right: 10px;">
-                        <div class="d-flex flex-column w-100">
-                          <input type="password" class="form rounded" id="Password_Login" placeholder="Current Password" required>
-                          <p id="Password_Valid" class=" pt-2 ps-1" style="color: red;"">
+                        <div class="mb-4 d-flex">
+                            <img id="password-icon" src="Image/Vector/Lock.svg" class="icon" alt="User Icon" style="width: 15px; margin-right: 10px;">
+                            <div class="d-flex flex-column w-100">
+                                <input type="password" class="form rounded" name="password" id="Password_Login" placeholder="Current Password" required>
+                                @error('password')
+                                <p class="pt-2 ps-1" style="color: red;">{{ $message }}</p>
+                                @enderror
+                                <p id="Password_Valid" class=" pt-2 ps-1" style="color: red;"">
                           </p>
                         </div>
                       </div>
-                      <div class="mb-4 d-flex">
-                          <img id="password-icon" src="Image/Vector/Key.svg" class="icon" alt="User Icon" style="width: 15px; margin-right: 10px;">
-                          <div class="d-flex flex-column w-100">
-                            <input type="password" class="form rounded" id="Password_Login" placeholder="New Password" required>
-                            <p id="Password_Valid" class=" pt-2 ps-1" style="color: red;"">
+                      <div class=" mb-4 d-flex">
+                                    <img id="password-icon" src="Image/Vector/Key.svg" class="icon" alt="User Icon" style="width: 15px; margin-right: 10px;">
+                                <div class="d-flex flex-column w-100">
+                                    <input type="password" class="form rounded" name="newpassword" id="Password_Login" placeholder="New Password" required>
+                                    <p id="Password_Valid" class=" pt-2 ps-1" style="color: red;"">
                             </p>
                           </div>
                         </div>
-                      <button id="Login-button" type="submit" class="btn btn-primary w-100 fw-semibold">Submit</button>
+                      <button id=" Login-button" type="submit" class="btn btn-primary w-100 fw-semibold">Submit</button>
                     </form>
                 </div>
             </div>
