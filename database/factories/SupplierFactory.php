@@ -21,7 +21,7 @@ class SupplierFactory extends Factory
             'Nama_Supplier'=>fake()->name(),
             'Alamat_Supplier'=>fake()->address(),
             'Kategori_Supplier'=>fake()->company(),
-            'Metode_Pembayaran'=>fake()->boolean(),
+            // 'Metode_Pembayaran'=>fake()->boolean(),
             'NomorTelp'=>fake()->phoneNumber()
         ];
     }
