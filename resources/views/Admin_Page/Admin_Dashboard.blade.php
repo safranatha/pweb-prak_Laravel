@@ -76,7 +76,7 @@
           <div class="container-fluid mx-2">
             <p class="navbar-brand">Hello, Admin</p>
             <div class="navbar-nav ms-auto">
-              <p class="mt-2">Muhammad Alfariza Rasendria</p>
+              <p class="mt-2">{{ Auth::user()->username}}</p>
               <a class="nav-link" href="User_Page.html">
                 <img class="Icon-Nav" src="Image/Vector/Admin-Icon.svg">
               </a>
