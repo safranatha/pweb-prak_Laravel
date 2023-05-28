@@ -47,7 +47,7 @@
           </a>
         </div>
         <div id="SignOut-Menu" class="py-3 menu-option mt-3">
-          <a href="{{ route('LandingPage') }}" class="d-flex align-items-center text-decoration-none">
+          <a href="{{ route('Logout') }}" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/SignOut.svg">
             <span class="text-dark">Sign Out</span>
           </a>
@@ -57,7 +57,7 @@
       <div id="main-content" class="col w-50 d-flex flex-column justify-content-center align-items-center mb-5">
         <nav class="navbar w-100 navbar-expand-lg navbar-light bg-light mt-2">
           <div class="container-fluid mx-2">
-            <p class="navbar-brand">Hello, Admin</p>
+            <p class="navbar-brand">Hello, Staff</p>
             <div class="navbar-nav ms-auto">
               <p class="mt-2">Muhammad Alfariza Rasendria</p>
               <a class="nav-link" href="#">

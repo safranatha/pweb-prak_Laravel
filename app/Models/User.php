@@ -25,6 +25,7 @@ class User extends Authenticatable
         'password',
         'NoTelp',
         'remember_token',
+        'role'
     ];
 
     /**
@@ -46,10 +47,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    protected function role(): Attribute
+    /* protected function role(): Attribute
     {
         return new Attribute(
             get: fn($value) => ["Staff","Admin"][$value],
         );
-    }
+    } */
 }

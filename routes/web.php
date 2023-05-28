@@ -33,26 +33,45 @@ Route::get('/', function () {
 Route::get('/User_Option_Page', function () {
     return view('User_Option_Page.page_antara');
 });
+Route::get('/Regist_Option_Page', function () {
+    return view('User_Option_Page.Registpage_antara');
+});
 // Route::get('/Admin_Login', function(){
 //     return view('Login Page.Login Admin');
 // });
 Route::get('/LoginAdmin', [sessionController::class, 'index'])->name('AdminLogin');
-Route::post('/LoginAdmin/login', [sessionController::class, 'login']);
-Route::post('/LoginAdmin/login', [sessionController::class, 'login']);
+Route::get('/LoginStaff', [sessionController::class, 'indexStaff'])->name('StaffLogin');
+Route::post('/LoginAdmin/login', [sessionController::class, 'login'])->name('LoginAuth');
 
 Route::get('/register', [sessionController::class, 'Register'])->name('AdminRegister');
-Route::post('/registerAdmin', [sessionController::class, 'registeruser'])->name('AdminRegisterPost');
+Route::post('/registerStaff', [sessionController::class, 'registeruser'])->name('StaffRegisterPost');
+Route::post('/registerAdmin', [sessionController::class, 'registerAdmin'])->name('AdminRegisterPost');
+
+Route::get('/Logout', [sessionController::class, 'logout'])->name('Logout');
+
+
+
+Route::get('/RegisterAdminForm', function () {
+    return view('Sign_Up_Page.RegisterAdmin');
+});
+Route::get('/RegisterStaffForm', function () {
+    return view('Sign_Up_Page.Register');
+});
+
+
+
+
 
 /* Route::route('/Adminregister', [sessionController::class, 'registeruser'])->name('AdminRegisterPost');
 Route::post('/registerAdmin', [sessionController::class, 'registeruser'])->name('AdminRegisterPost'); */
 
 
 Route::get('/Staff_Login', function () {
-    return view('Login Page.Login Staff');
+    return view('Login_Page.Login_Staff');
 });
 
 Route::get('/Register_Page', function () {
-    return view('Sign Up Page.Register');
+    return view('Sign_Up_Page.Register');
 });
 
 
@@ -106,7 +125,7 @@ Route::get('/Staff_Stock', function () {
 
 Route::view('/Admin_Stock_Barang', 'Admin_Page.Stock')->name('AdminStockPage');
 Route::view('/Admin_Account', 'Admin_Page.Admin_Account')->name('AdminAccount');
-Route::view('/Admin_Dashboard', 'Admin_Page.Admin_Dashboard')->name('AdminDashboard');
+/* Route::view('/Admin_Dashboard', 'Admin_Page.Admin_Dashboard')->name('ViewAdminDashboard'); */
 Route::view('/Landing_Page', 'Landing.index')->name('LandingPage');
 Route::view('/Admin_Report', 'Admin_Page.Report')->name('AdminReport');
 Route::view('/Admin_Stok', 'Admin_Page.Stock')->name('AdminStok');
@@ -115,7 +134,7 @@ Route::view('/StokKeluar', 'Admin_Page.Stock_stockKeluar')->name('AdminStokKelua
 
 
 Route::view('/Staff_Stock_Page', 'Staff_Page.Staff_Stock_Page')->name('StaffStock');
-Route::view('/Staff_Payment_Page', 'Staff_Page.Staff_Payment')->name('StaffPayment');
+// Route::view('/Staff_Payment_Page', 'Staff_Page.Staff_Payment')->name('StaffPayment');
 Route::view('/Staff_Supplier_Page', 'Staff_Page.Staff_Supplier')->name('StaffSupplier');
 Route::view('/Staff_Account_Page', 'Staff_Page.Staff_Account')->name('StaffAccount');
 
@@ -146,3 +165,5 @@ Route::post('/updatebarang/{id}', [BarangController::class, 'update'])->name('Up
 Route::get('/tampilkansupplier/{id}', [SupplierController::class, 'show'])->name('tampilkansupplier');
 Route::get('/Hapussupplier/{id}', [SupplierController::class, 'destroy'])->name('Hapussupplier');
 Route::post('/updatesupplier/{id}', [SupplierController::class, 'update'])->name('Updatesupplier');
+
+

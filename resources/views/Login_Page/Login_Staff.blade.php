@@ -16,12 +16,12 @@
       <p class=" mt-4" style="font-size: 18px;">Please input username and password before login</p>
 
 
-      <form action="Staff_Payment" method="get" class="w-25 mt-2 needs-validation" novalidate>
+      <form action="{{ route('LoginAuth') }}" method="POST" class="w-25 mt-2 needs-validation" novalidate>
         @csrf
         <div class="mb-4 d-flex flex-row">
           <img id="user-icon" src="Image/Vector/User.svg" class="icon" alt="User Icon" style="width: 15px; margin-right: 10px;">
           <div class="d-flex flex-column w-100">
-            <input type="text" class="form rounded  " id="Username_Login" placeholder="Username" required > 
+            <input type="text" class="form rounded" name="email" id="Username_Login" placeholder="Username" required >
             <p id="Username_Valid" class="pt-2 ps-1" style="color: red;">
             </p>
           </div>
@@ -31,10 +31,10 @@
         <div class="mb-4 d-flex">
           <img id="password-icon" src="Image/Vector/Lock.svg" class="icon" alt="User Icon" style="width: 15px; margin-right: 10px;">
           <div class="d-flex flex-column w-100">
-            <input type="password" class="form rounded " id="Password_Login" placeholder="Password" required>
+            <input type="password" class="form rounded" name="password" id="Password_Login" placeholder="Password" required>
             <p id="Password_Valid" class=" pt-2 ps-1" style="color: red;">
             </p>
-            
+
           </div>
         </div>
         <a href="../Sign Up Page/Register.html"><label class="form-check-label mb-4">Dont have an account

@@ -13,7 +13,11 @@ class sessionController extends Controller
 {
     function index()
     {
-        return view("Login Page/Login Admin");
+        return view("Login_Page.Login_Admin");
+    }
+    function indexStaff()
+    {
+        return view("Login_Page.Login_Staff");
     }
 
     public function registeruser(Request $request)
@@ -24,7 +28,20 @@ class sessionController extends Controller
             'password' => bcrypt($request->password),
             'NoTelp' => $request->NoTelp,
             'remember_token' => Str::random(60),
-            'role' => 'user',
+            'role' => 'Staff',
+        ]);
+        return redirect()->route('StaffLogin');
+    }
+
+    public function registerAdmin(Request $request)
+    {
+        $user = User::create([
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'NoTelp' => $request->NoTelp,
+            'remember_token' => Str::random(60),
+            'role' => 'Admin',
         ]);
         return redirect()->route('AdminLogin');
     }
@@ -56,8 +73,15 @@ class sessionController extends Controller
         } else {
             // return redirect('LoginAdmin')->withErrors('tidak valid');
             //gagal
-            return 'gagal';
+            return 'Gagal Login';
         }
+    }
+
+    function logout (Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
     }
 
     function create()

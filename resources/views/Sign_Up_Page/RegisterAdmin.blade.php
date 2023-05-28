@@ -13,10 +13,10 @@
 <body class="d-flex flex-column  vh-100" style="background-color: #E5E5E5;">
 
   <div class="container-fluid d-flex flex-column justify-content-center align-items-center mb-4 vh-100">
-    <h1 class="text-center" style="font-size: 50px">Register As Staff</h1>
+    <h1 class="text-center" style="font-size: 50px"">Register As Admin</h1>
     <p class=" text-center mt-4" style="font-size: 18px;">Please Fill Out This Form to Start Creating an Account</p>
 
-      <form action="{{ route('StaffRegisterPost') }}" method="POST" class="w-25 mt-2 needs-validation" novalidate>
+      <form action="{{ route('AdminRegisterPost') }}" method="POST" class="w-25 mt-2 needs-validation" novalidate>
         @csrf
         <div class="mb-4 d-flex flex-row">
           <img id="Full_Name" src="Image/Vector/User.svg" class="mb-3" alt="User Icon" style="width: 15px; margin-right: 10px;">
