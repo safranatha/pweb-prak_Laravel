@@ -17,6 +17,12 @@
 
 
       <form action="{{ route('LoginAuth') }}" method="POST" class="w-25 mt-2 needs-validation" novalidate>
+        @if(session()->has('loginError'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('loginError') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+            </div>
+        @endif
         @csrf
         <div class="mb-4 d-flex flex-row">
           <img id="user-icon" src="Image/Vector/User.svg" class="icon" alt="User Icon" style="width: 15px; margin-right: 10px;">
