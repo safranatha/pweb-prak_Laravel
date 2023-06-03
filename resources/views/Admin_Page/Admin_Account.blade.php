@@ -129,11 +129,11 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Supplier Id</th>
-                                <th>Nama Supplier</th>
-                                <th>Alamat Supplier</th>
-                                <th>Kategori Supplier</th>
+                                <th>User Id</th>
+                                <th>Username</th>
+                                <th>Email</th>
                                 <th>Nomor Telefon</th>
+                                <th>Role</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
