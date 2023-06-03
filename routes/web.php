@@ -114,9 +114,9 @@ Route::get('/Admin_Sales_Page', [PenjualanController::class, 'index']);
 //     return view('Admin_Page.Supplier');
 // });
 
-// Route::get('/Admin_Account', function(){
-//     return view('Admin_Page.Admin_Account');
-// });
+ Route::get('/Admin_Account', function(){
+     return view('Admin_Page.Admin_Account');
+ });
 // Route::get('/Staff_Account', function(){
 //     return view('Staff_Page.Staff_Account');
 // });
@@ -167,5 +167,9 @@ Route::post('/updatebarang/{id}', [BarangController::class, 'update'])->name('Up
 Route::get('/tampilkansupplier/{id}', [SupplierController::class, 'show'])->name('tampilkansupplier');
 Route::get('/Hapussupplier/{id}', [SupplierController::class, 'destroy'])->name('Hapussupplier');
 Route::post('/updatesupplier/{id}', [SupplierController::class, 'update'])->name('Updatesupplier');
+
+Route::get('/tampilkanUser/{id}', [UserController::class, 'show'])->name('tampilkanUser');
+Route::get('/HapusUser/{id}', [UserController::class, 'destroy'])->name('HapusUser');
+Route::post('/updateUser/{id}', [UserController::class, 'update'])->name('UpdateUser');
 
 

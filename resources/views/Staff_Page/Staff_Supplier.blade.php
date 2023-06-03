@@ -105,9 +105,6 @@
               </select>
             </label>
 
-
-
-
             <div class="d-flex flex-row gap-5 justify-content-start mt-5">
               <button type="submit" class="bg-success px-3 text-light">Add</button>
               <button class="bg-danger px-3 text-light">Cancel</button>
