@@ -36,7 +36,7 @@
                     </a>
                 </div>
                 <div id="Payment-Menu" class="py-3 menu-option mt-3">
-                    <a href="Admin_Sales_Page" class="d-flex align-items-center text-decoration-none">
+                    <a href="{{ route('penjualan.index') }}" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="{{ asset('Image/Vector/Payment.svg') }}">
                         <span class="text-dark">Penjualan</span>
 
@@ -50,7 +50,7 @@
                 </div>
 
                 <div id="Supplier-Menu" class="py-3 menu-option mt-3 d-flex align-items-center">
-                    <a href="Admin_Supplier" class="d-flex align-items-center text-decoration-none">
+                    <a href= "{{ route('supplier.index') }}" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="{{ asset('Image/Vector/Supplier.svg') }}">
                         <span class="text-dark">Supplier</span>
                     </a>
