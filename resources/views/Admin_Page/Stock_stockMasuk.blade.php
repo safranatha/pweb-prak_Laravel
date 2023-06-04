@@ -87,23 +87,23 @@
 
                 <div class="container ms-3 my-5">
                     <h5 class="pb-4">Stok Masuk</h5>
-                    <form action="" method="post">
+                    <form action="{{route('barang.index')}}" method="get">
                         <div class="row gy-3">
                             <div class="col-md-3">
-                                <p>Id Barang</p>
-                                <input type="text" class="form-control" placeholder="Input Id Barang" required>
+                                <p>Nama Barang</p>
+                                <input type="text" name="Nama_barang" class="form-control" placeholder="Input Nama Barang">
                             </div>
                             <div class="col-md-3">
-                                <p>Nama Barang</p>
-                                <input type="text" class="form-control" placeholder="Input Nama Barang" required>
+                                <p>Kategori Barang</p>
+                                <input type="text" name="Kategori_barang" class="form-control" placeholder="Input Kategori Barang">
+                            </div>
+                            <div class="col-md-3">
+                                <p>Nama Supplier</p>
+                                <input type="text" name="Supplier" class="form-control" placeholder="Input Supplier Barang">
                             </div>
                             <div class="col-md-3">
                                 <p>Tanggal Masuk</p>
-                                <input type="date" class="form-control" required>
-                            </div>
-                            <div class="col-md-3">
-                                <p>Tanggal Keluar</p>
-                                <input type="date" class="form-control" required>
+                                <input type="date" name="Tanggal" class="form-control">
                             </div>
 
 

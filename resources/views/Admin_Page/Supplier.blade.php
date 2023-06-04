@@ -87,23 +87,23 @@
 
                 <div class="container ms-3 my-5" id="table-title">
                     <h5 class="pb-4">Daftar Supplier</h5>
-                    <form action="" method="post">
+                    <form action="{{ route('supplier.index') }}" method="get">
                         <div class="row gy-3">
                             <div class="col-md-3">
-                                <p>Id Supplier</p>
-                                <input type="text" class="form-control mb-2" placeholder="Input Id Supplier"
-                                    required>
-                            </div>
-
-                            <div class="col-md-3">
                                 <p>Nama Supplier</p>
-                                <input type="text" class="form-control mb-2" placeholder="Input Nama Supplier"
-                                    required>
+                                <input type="text" class="form-control mb-2" name="Nama_Supplier" placeholder="Input Nama Supplier"
+                                >
+                            </div>
+
+                            <div class="col-md-3">
+                                <p>Alamat Supplier</p>
+                                <input type="text" class="form-control mb-2" name="Alamat_Supplier" placeholder="Input Alamat Supplier"
+                                >
 
                             </div>
                             <div class="col-md-3">
-                                <p>Tanggal</p>
-                                <input type="date" class="form-control mb-2" required>
+                                <p>Kategori Supplier</p>
+                                <input type="text" class="form-control mb-2" name="Kategori_Supplier" placeholder="Input Kategori Supplier">
                             </div>
                             <div class="col-md-3 mt-5 pt-3">
                                 <button type="submit" class="w-50 text-center">Search</button>

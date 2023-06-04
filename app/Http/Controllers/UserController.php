@@ -19,17 +19,17 @@ class UserController extends Controller
         $query = User::query();
         $username_keyword = $request->username_keyword;
         if (!empty($username_keyword)) {
-            $query->where('username', 'LIKE', '%' . $username_keyword . '%');
+            $query->where('username', 'LIKE', "%$username_keyword%");
         }
 
         $email_keyword = $request->email_keyword;
         if (!empty($email_keyword)) {
-            $query->where('email', 'LIKE', '%' . $email_keyword . '%');
+            $query->where('email', 'LIKE', "%$email_keyword%");
         }
 
         $role_keyword = $request->role_keyword;
         if(!empty($role_keyword)){
-            $query->where('role','LIKE','%' .$role_keyword . '%');
+            $query->where('role','LIKE',"%$role_keyword%");
         }
 
         $User = $query->paginate(10);

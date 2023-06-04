@@ -84,7 +84,7 @@
               <input id="Id_Barang" name="Tanggal" class="w-100" type="date" required>
             </label>
 
-            <label for="s_Barang">Supplier<br>
+            <label for="s_Barang">Nama Supplier<br>
               <input id="Id_Barang" name="Supplier" class="w-100" type="text" required>
             </label>
 
