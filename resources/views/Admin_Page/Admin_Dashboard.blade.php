@@ -56,9 +56,9 @@
         </div>
 
         <div id="Akun-Menu" class="py-3 menu-option mt-3">
-          <a href="{{ route('AdminAccount') }}" class="d-flex align-items-center text-decoration-none">
+          <a href="{{ route('user.index') }}" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/User.svg">
-            <span class="text-dark">Akun</span>
+            <span class="text-dark">User Managenent</span>
           </a>
         </div>
 
@@ -76,7 +76,7 @@
           <div class="container-fluid mx-2">
             <p class="navbar-brand">Hello, Admin</p>
             <div class="navbar-nav ms-auto">
-              <p class="mt-2">Muhammad Alfariza Rasendria</p>
+              <p class="mt-2">{{ Auth::user()->username}}</p>
               <a class="nav-link" href="User_Page.html">
                 <img class="Icon-Nav" src="Image/Vector/Admin-Icon.svg">
               </a>

@@ -55,9 +55,9 @@
                 </div>
 
                 <div id="Akun-Menu" class="py-3 menu-option mt-3">
-                    <a href="{{ route('AdminAccount') }}" class="d-flex align-items-center text-decoration-none">
+                    <a href="{{route('user.index')}}" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="Image/Vector/User.svg">
-                        <span class="text-dark">Akun</span>
+                        <span class="text-dark">User Managenent</span>
                     </a>
                 </div>
 

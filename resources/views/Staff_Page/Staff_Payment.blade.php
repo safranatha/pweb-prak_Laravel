@@ -41,12 +41,12 @@
         </div>
 
 
-        <div id="Akun-Menu" class="py-3 menu-option mt-2">
+        <!-- <div id="Akun-Menu" class="py-3 menu-option mt-2">
           <a href="{{ route('StaffAccount') }}" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/User.svg">
             <span class="text-dark">Akun</span>
           </a>
-        </div>
+        </div> -->
 
 
         <div id="SignOut-Menu" class="py-3 menu-option mt-3">
@@ -63,7 +63,7 @@
           <div class="container-fluid mx-2">
             <p class="navbar-brand">Hello, Staff</p>
             <div class="navbar-nav ms-auto">
-              <p class="mt-2">Muhammad Alfariza Rasendria</p>
+              <p class="mt-2">{{ Auth::user()->username}}</p>
               <a class="nav-link" href="#">
                 <img class="Icon-Nav" src="Image/Vector/Admin-Icon.svg">
               </a>

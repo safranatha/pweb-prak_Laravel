@@ -55,9 +55,9 @@
                 </div>
 
                 <div id="Akun-Menu" class="py-3 menu-option mt-3">
-                    <a href="Admin_Account" class="d-flex align-items-center text-decoration-none">
+                    <a href="{{route('user.index')}}" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="{{ asset('Image/Vector/User.svg') }}">
-                        <span class="text-dark">Akun</span>
+                        <span class="text-dark">User Managenent</span>
                     </a>
                 </div>
 
@@ -91,12 +91,14 @@
                         <div class="row gy-3">
                             <div class="col-md-3">
                                 <p>Id Supplier</p>
-                                <input type="text" class="form-control mb-2" placeholder="Input Id Supplier" required>
+                                <input type="text" class="form-control mb-2" placeholder="Input Id Supplier"
+                                    required>
                             </div>
 
                             <div class="col-md-3">
                                 <p>Nama Supplier</p>
-                                <input type="text" class="form-control mb-2" placeholder="Input Nama Supplier" required>
+                                <input type="text" class="form-control mb-2" placeholder="Input Nama Supplier"
+                                    required>
 
                             </div>
                             <div class="col-md-3">
@@ -128,22 +130,22 @@
                                 $no = 1;
                             @endphp
                             @foreach ($supplier as $supplier)
-                            <tr>
-                                <td>{{ $no++ }}</td>
-                                <td>{{ $supplier->id }}</td>
-                                <td>{{ $supplier->Nama_Supplier }}</td>
-                                <td>{{ $supplier->Alamat_Supplier }}</td>
-                                <td>{{ $supplier->Kategori_Supplier }}</td>
-                                <td>{{ $supplier->NomorTelp }}</td>
-                                <td>{{ $supplier->Metode_Pembayaran }}</td>
-                                <td><a href="/tampilkansupplier/{{ $supplier->id }}" id="edit-delete-button"
-                                    type="button" class="btn btn-primary"><img id="edit-icon"
-                                        src="{{ asset('Icon/pen-solid.png') }}"> </td>
-                                <td><a href="/Hapussupplier/{{ $supplier->id }}" type="submit"
-                                        id="edit-delete-button" type="button" class="btn btn-danger"><img
-                                            id="delete-icon" src="{{ asset('Icon/trash-solid.png') }}"></button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $supplier->id }}</td>
+                                    <td>{{ $supplier->Nama_Supplier }}</td>
+                                    <td>{{ $supplier->Alamat_Supplier }}</td>
+                                    <td>{{ $supplier->Kategori_Supplier }}</td>
+                                    <td>{{ $supplier->NomorTelp }}</td>
+                                    <td>{{ $supplier->Metode_Pembayaran }}</td>
+                                    <td><a href="/tampilkansupplier/{{ $supplier->id }}" id="edit-delete-button"
+                                            type="button" class="btn btn-primary"><img id="edit-icon"
+                                                src="{{ asset('Icon/pen-solid.png') }}"> </td>
+                                    <td><a href="/Hapussupplier/{{ $supplier->id }}" type="submit"
+                                            id="edit-delete-button" type="button" class="btn btn-danger"><img
+                                                id="delete-icon" src="{{ asset('Icon/trash-solid.png') }}"></button>
+                                    </td>
+                                </tr>
                             @endforeach
 
 

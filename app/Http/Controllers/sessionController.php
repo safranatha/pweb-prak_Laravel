@@ -73,7 +73,7 @@ class sessionController extends Controller
         } else {
             // return redirect('LoginAdmin')->withErrors('tidak valid');
             //gagal
-            return 'Gagal Login';
+            return back()->with('loginError', 'Login Failed!');
         }
     }
 
