@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Barang;
+use Illuminate\Http\Request;
 use App\Http\Requests\StorebarangRequest;
 use App\Http\Requests\UpdatebarangRequest;
 
@@ -11,9 +12,27 @@ class BarangController extends Controller
     /**
      * Display a listing of the resource.
      */
-   public function index()
+   public function index(Request $request)
 {
-    $barang = Barang::all();
+    $query = Barang::query();
+    $nama_keyword = $request->Nama_barang;
+    if(!empty($nama_keyword)){
+        $query->where('Nama_Barang', 'LIKE', "%$nama_keyword%");
+    }
+    $kategori_keyword = $request->Kategori_barang;
+    if(!empty($kategori_keyword)){
+        $query->where('Kategori_Barang', 'LIKE', "%$kategori_keyword%");
+    }
+    $supplier_keyword = $request->Supplier;
+    if(!empty($supplier_keyword)){
+        $query->where('Supplier', 'LIKE', "%$supplier_keyword%");
+    }
+    $tanggal_keyword = $request->Tanggal;
+    if(!empty($tanggal_keyword)){
+        $query->where('Tanggal', 'LIKE', "%$tanggal_keyword%");
+    }
+
+    $barang = $query -> paginate(10);
     return view('Admin_Page.Stock_stockMasuk', ['barang' => $barang]);
 }
 

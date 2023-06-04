@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Supplier;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreSupplierRequest;
 use App\Http\Requests\UpdateSupplierRequest;
 
@@ -11,9 +12,23 @@ class SupplierController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $supplier = Supplier::all();
+        $query = Supplier::query();
+        $nama_keyword = $request->Nama_Supplier;
+        if(!empty($nama_keyword)){
+            $query->where('Nama_Supplier','LIKE',"%$nama_keyword%");
+        }
+        $alamat_keyword = $request->Alamat_Supplier;
+        if(!empty($alamat_keyword)){
+            $query->where('Alamat_Supplier','LIKE',"%$alamat_keyword%");
+        }
+        $kategori_keyword = $request->Kategori_Supplier;
+        if(!empty($kategori_keyword)){
+            $query->where('Kategori_Supplier','LIKE',"%$kategori_keyword%");
+        }
+
+        $supplier = $query->paginate(10);
         return view('Admin_Page.Supplier', ['supplier' => $supplier]);
     }
 
