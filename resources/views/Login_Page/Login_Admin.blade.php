@@ -12,7 +12,7 @@
 
 <body class="d-flex flex-column vh-100" style="background-color: #E5E5E5;">
   <div class="container-fluid d-flex flex-column justify-content-center align-items-center vh-100">
-    <h1 class="text-center" style="font-size: 50px">Login As Admin</h1>
+    <h1 class="text-center" style="font-size: 50px">Login</h1>
       <p class=" mt-4" style="font-size: 18px;">Please input username and password before login</p>
 
 
@@ -37,7 +37,7 @@
 
           </div>
         </div>
-        <a href="{{ route('AdminRegister') }}"><label class="form-check-label mb-4">Dont have an account
+        <a href="{{ route('adminRegist') }}"><label class="form-check-label mb-4">Dont have an account
             yet?</label></a>
         <button id="Login-button" name="submit" type="submit" class="btn btn-primary w-100 fw-semibold">
             Login

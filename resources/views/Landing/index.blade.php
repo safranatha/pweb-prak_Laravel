@@ -42,7 +42,7 @@
             </ul>
 
             <form class="d-flex">
-              <a href="User_Option_Page" class="btn btn-dark me-2"
+              <a href="LoginAdmin" class="btn btn-dark me-2"
                 >Login</a
               >
               <a href="Regist_Option_Page" class="btn btn-dark ms-2"

@@ -53,7 +53,7 @@ Route::get('/Logout', [sessionController::class, 'logout'])->name('Logout');
 
 Route::get('/RegisterAdminForm', function () {
     return view('Sign_Up_Page.RegisterAdmin');
-});
+})->name('adminRegist');
 Route::get('/RegisterStaffForm', function () {
     return view('Sign_Up_Page.Register');
 });
