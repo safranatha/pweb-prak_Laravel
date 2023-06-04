@@ -43,7 +43,7 @@
 
           </div>
         </div>
-        <a href="{{ route('adminRegist') }}"><label class="form-check-label mb-4">Dont have an account
+        <a href="{{ route('Register_Option_Page') }}"><label class="form-check-label mb-4">Dont have an account
             yet?</label></a>
         <button id="Login-button" name="submit" type="submit" class="btn btn-primary w-100 fw-semibold">
             Login

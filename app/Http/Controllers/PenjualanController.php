@@ -45,9 +45,11 @@ class PenjualanController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Penjualan $penjualan)
+    public function show($id)
     {
-        //
+        $penjualan = Penjualan::find($id);
+        // dd($data);
+        return view('Admin_Page.EditForm_Penjualan', compact('penjualan'));
     }
 
     /**
@@ -61,16 +63,20 @@ class PenjualanController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePenjualanRequest $request, Penjualan $penjualan)
+    public function update(UpdatePenjualanRequest $request, $id)
     {
-        //
+        $penjualan = Penjualan::find($id);
+        $penjualan -> update($request->all());
+        return redirect()->route('penjualan.index')->with('success','Data berhasil di update');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Penjualan $penjualan)
+    public function destroy(Penjualan $penjualan,$id)
     {
-        //
+        $penjualan = Penjualan::find($id);
+        $penjualan->delete();
+        return redirect()->back()->with('success', 'Data berhasil dihapus');
     }
 }

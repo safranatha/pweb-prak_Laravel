@@ -138,8 +138,8 @@
                                     <td>{{ /* $item->id */ $no++ }}</td>
                                     <td>{{ $item->id}}</td>
                                     <td>{{ $item->Nama_barang }}</td>
-                                    <td>{{ $item->Kategori_barang }}</td>
                                     <td>{{ $item->Jumlah_barang }}</td>
+                                    <td>{{ $item->Kategori_barang }}</td>
                                     <td>{{ $item->Tanggal }}</td>
                                     <td>{{ $item->Supplier }}</td>
                                     <td><a href="/tampilkanbarang/{{ $item->id }}" id="edit-delete-button"

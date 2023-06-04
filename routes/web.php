@@ -172,4 +172,8 @@ Route::get('/tampilkanUser/{id}', [UserController::class, 'show'])->name('tampil
 Route::get('/HapusUser/{id}', [UserController::class, 'destroy'])->name('HapusUser');
 Route::post('/updateUser/{id}', [UserController::class, 'update'])->name('UpdateUser');
 
+Route::get('/tampilkanPenjualan/{id}', [PenjualanController::class, 'show'])->name('tampilkanPenjualan');
+Route::get('/HapusPenjualan/{id}', [PenjualanController::class, 'destroy'])->name('HapusPenjualan');
+Route::post('/updatePenjualan/{id}', [PenjualanController::class, 'update'])->name('UpdatePenjualan');
+
 

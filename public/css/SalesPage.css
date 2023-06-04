@@ -123,3 +123,26 @@ input::placeholder{
     border-radius: 30px;
     box-shadow: 7px 7px 8px #888888
 }
+
+#edit-icon,#delete-icon{
+    object-fit: contain;
+}
+
+#edit-delete-button{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 50px;
+    height: 30px;
+    padding: 5px;
+}
+
+#edit-icon{
+    width:90%;
+    height:100%;
+}
+
+#delete-icon{
+    width:80%;
+    height:100%;
+}

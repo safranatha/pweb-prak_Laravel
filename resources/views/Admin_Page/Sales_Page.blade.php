@@ -41,7 +41,7 @@
                 </div>
 
                 <div id="Supplier-Menu" class="py-3 menu-option mt-3">
-                    <a href="{{route('supplier.index')}}" class="d-flex align-items-center text-decoration-none">
+                    <a href="{{ route('supplier.index') }}" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Supplier.svg">
                         <span class="text-dark">Supplier</span>
                     </a>
@@ -55,7 +55,7 @@
                 </div>
 
                 <div id="Akun-Menu" class="py-3 menu-option mt-3">
-                    <a href="{{route('user.index')}}" class="d-flex align-items-center text-decoration-none">
+                    <a href="{{ route('user.index') }}" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="Image/Vector/User.svg">
                         <span class="text-dark">User Managenent</span>
                     </a>
@@ -132,14 +132,21 @@
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->Total }}</td>
                                     <td>{{ $item->Date }}</td>
-                                    <td>{{ $item->Method}}</td>
+                                    <td>{{ $item->Method }}</td>
                                     <td>{{ $item->Status }}</td>
+                                    <td><a href="/tampilkanPenjualan/{{ $item->id }}" id="edit-delete-button"
+                                            type="button" class="btn btn-primary"><img id="edit-icon"
+                                                src="{{ asset('Icon/pen-solid.png') }}"> </td>
+                                    <td><a href="/HapusPenjualan/{{ $item->id }}" type="submit"
+                                            id="edit-delete-button" type="button" class="btn btn-danger"><img
+                                                id="delete-icon" src="{{ asset('Icon/trash-solid.png') }}"></button>
+                                    </td>
                                 </tr>
                                 <?php $i++; ?>
                             @endforeach
                         </tbody>
                     </table>
-                    {{$penjualan->links()}}
+                    {{ $penjualan->links() }}
                 </div>
 
 

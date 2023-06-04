@@ -17,11 +17,11 @@ class BarangFactory extends Factory
     public function definition(): array
     {
         return [
-            'Nama_barang'=>fake()->String(),
-            'Kategori_barang'=>fake()->String(),
-            'Jumlah_barang'=>fake()->String(),
+            'Nama_barang'=>fake()->colorName(),
+            'Kategori_barang'=>fake()->name(),
+            'Jumlah_barang'=>fake()->randomNumber(),
             'Tanggal'=>fake()->date(),
-            'Supplier'=>fake()->String(),
+            'Supplier'=>fake()->name(),
         ];
     }
 }

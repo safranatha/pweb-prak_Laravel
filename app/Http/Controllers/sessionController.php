@@ -17,7 +17,7 @@ class sessionController extends Controller
     }
     function indexStaff()
     {
-        return view("Login_Page.Login_Staff");
+        return view("Login_Page.Login_Admin");
     }
 
     public function registeruser(Request $request)
