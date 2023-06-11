@@ -55,7 +55,7 @@
                 </div>
 
                 <div id="Akun-Menu" class="py-3 menu-option mt-3">
-                    <a href="{{route('user.index')}}" class="d-flex align-items-center text-decoration-none">
+                    <a href="{{ route('user.index') }}" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="{{ asset('Image/Vector/User.svg') }}">
                         <span class="text-dark">User Managenent</span>
                     </a>
@@ -91,19 +91,20 @@
                         <div class="row gy-3">
                             <div class="col-md-3">
                                 <p>Nama Supplier</p>
-                                <input type="text" class="form-control mb-2" name="Nama_Supplier" placeholder="Input Nama Supplier"
-                                >
+                                <input type="text" class="form-control mb-2" name="Nama_Supplier"
+                                    placeholder="Input Nama Supplier">
                             </div>
 
                             <div class="col-md-3">
                                 <p>Alamat Supplier</p>
-                                <input type="text" class="form-control mb-2" name="Alamat_Supplier" placeholder="Input Alamat Supplier"
-                                >
+                                <input type="text" class="form-control mb-2" name="Alamat_Supplier"
+                                    placeholder="Input Alamat Supplier">
 
                             </div>
                             <div class="col-md-3">
                                 <p>Kategori Supplier</p>
-                                <input type="text" class="form-control mb-2" name="Kategori_Supplier" placeholder="Input Kategori Supplier">
+                                <input type="text" class="form-control mb-2" name="Kategori_Supplier"
+                                    placeholder="Input Kategori Supplier">
                             </div>
                             <div class="col-md-3 mt-5 pt-3">
                                 <button type="submit" class="w-50 text-center">Search</button>
@@ -129,25 +130,29 @@
                             @php
                                 $no = 1;
                             @endphp
-                            @foreach ($supplier as $supplier)
+                            <?php $i = $supplier->firstItem(); ?>
+                            @foreach ($supplier as $suppliers)
                                 <tr>
                                     <td>{{ $no++ }}</td>
-                                    <td>{{ $supplier->id }}</td>
-                                    <td>{{ $supplier->Nama_Supplier }}</td>
-                                    <td>{{ $supplier->Alamat_Supplier }}</td>
-                                    <td>{{ $supplier->Kategori_Supplier }}</td>
-                                    <td>{{ $supplier->NomorTelp }}</td>
-                                    <td>{{ $supplier->Metode_Pembayaran }}</td>
-                                    <td><a href="/tampilkansupplier/{{ $supplier->id }}" id="edit-delete-button"
+                                    <td>{{ $suppliers->id }}</td>
+                                    <td>{{ $suppliers->Nama_Supplier }}</td>
+                                    <td>{{ $suppliers->Alamat_Supplier }}</td>
+                                    <td>{{ $suppliers->Kategori_Supplier }}</td>
+                                    <td>{{ $suppliers->NomorTelp }}</td>
+                                    <td>{{ $suppliers->Metode_Pembayaran }}</td>
+                                    <td><a href="/tampilkansupplier/{{ $suppliers->id }}" id="edit-delete-button"
                                             type="button" class="btn btn-primary"><img id="edit-icon"
                                                 src="{{ asset('Icon/pen-solid.png') }}"> </td>
-                                    <td><a href="/Hapussupplier/{{ $supplier->id }}" type="submit"
+                                    <td><a href="/Hapussupplier/{{ $suppliers->id }}" type="submit"
                                             id="edit-delete-button" type="button" class="btn btn-danger"><img
                                                 id="delete-icon" src="{{ asset('Icon/trash-solid.png') }}"></button>
                                     </td>
                                 </tr>
+                                <?php $i++; ?>
                             @endforeach
-
+                        </tbody>
+                    </table>
+                    {{ $supplier->links() }}
 
                 </div>
             </div>

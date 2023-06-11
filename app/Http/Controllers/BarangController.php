@@ -32,7 +32,7 @@ class BarangController extends Controller
         $query->where('Tanggal', 'LIKE', "%$tanggal_keyword%");
     }
 
-    $barang = $query -> paginate(10);
+    $barang = $query -> paginate(3);
     return view('Admin_Page.Stock_stockMasuk', ['barang' => $barang]);
 }
 

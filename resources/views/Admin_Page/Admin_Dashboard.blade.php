@@ -90,14 +90,14 @@
           <h5 class="mb-4">Monthly Report</h5>
           <div class="row gy-3 gap-5">
             <div class="d-flex flex-row gap-4 w-100">
-              <a href="../Admin_Page/Report.html" class="w-75 text-decoration-none">
+              <a href="" class="w-75 text-decoration-none">
                 <div id="Amount-3" class="rounded">
                   <p>Total Income</p>
                   <p>Rp. 2341</p>
                   <p class="text-end">03/2023</p>
                 </div>
               </a>
-              <a href="../Admin_Page/Report.html" class="w-75 text-decoration-none">
+              <a href="" class="w-75 text-decoration-none">
                 <div id="Amount-3" class=" rounded">
                   <p>Total Item Terjual</p>
                   <p>2341 Item</p>
@@ -105,7 +105,7 @@
                 </div>
               </a>
 
-              <a href="../Admin_Page/Report.html" class="w-75 me-3 text-decoration-none">
+              <a href="" class="w-75 me-3 text-decoration-none">
                 <div id="Amount-3" class=" rounded">
                   <p>Total Transaksi</p>
                   <p>2341</p>

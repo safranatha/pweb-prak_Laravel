@@ -133,6 +133,7 @@
                             @php
                                 $no = 1;
                             @endphp
+                            <?php $i = $barang->firstItem(); ?>
                             @foreach ($barang as $item)
                                 <tr>
                                     <td>{{ /* $item->id */ $no++ }}</td>
@@ -150,8 +151,12 @@
                                                 id="delete-icon" src="{{ asset('Icon/trash-solid.png') }}"></button>
                                     </td>
                                 </tr>
+                                <?php $i++; ?>
                             @endforeach
                         </tbody>
+                    </table>
+                    {{ $barang->links() }}
+
 
 
 
