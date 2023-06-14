@@ -29,7 +29,7 @@ class SupplierController extends Controller
             _Supplier','LIKE',"%$kategori_keyword%");
         }
 
-        $supplier = $query->paginate(10);
+        $supplier = $query->paginate(3);
         return view('Admin_Page.Supplier', ['supplier' => $supplier]);
     }
 

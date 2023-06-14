@@ -142,6 +142,7 @@
                             @php
                                 $no = 1;
                             @endphp
+                            <?php $i = $User->firstItem(); ?>
                             @foreach ($User as $user)
                                 <tr>
                                     <td>{{ $no++ }}</td>
@@ -166,6 +167,8 @@
                                 </tr>
                             @endforeach
                         </tbody>
+                    </table>
+                    {{ $User->links() }}
 
                 </div>
             </div>
