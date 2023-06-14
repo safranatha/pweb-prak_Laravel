@@ -68,7 +68,7 @@ class sessionController extends Controller
                 return redirect()->route('AdminDashboard')->with('success', 'Berhasil Login');
             }
             else if(auth()->user()->role == 'Staff'){
-                return redirect()->route('StaffPayment')->with('success', 'Berhasil Login');
+                return redirect()->route('pembayaran.index')->with('success', 'Berhasil Login');
             }
         } else {
             // return redirect('LoginAdmin')->withErrors('tidak valid');

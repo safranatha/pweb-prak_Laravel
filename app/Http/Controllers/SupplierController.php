@@ -25,7 +25,8 @@ class SupplierController extends Controller
         }
         $kategori_keyword = $request->Kategori_Supplier;
         if(!empty($kategori_keyword)){
-            $query->where('Kategori_Supplier','LIKE',"%$kategori_keyword%");
+            $query->where('Kategori
+            _Supplier','LIKE',"%$kategori_keyword%");
         }
 
         $supplier = $query->paginate(10);

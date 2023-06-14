@@ -28,10 +28,9 @@
           </a>
         </div>
         <div id="Payment-Menu" class="py-3 menu-option mt-3">
-          <a href="{{ route('penjualan.index')}}" class="d-flex align-items-center text-decoration-none">
+          <a href="{{ route('AdminTampilPayment')}}" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Payment.svg">
             <span class="text-dark">Penjualan</span>
-
           </a>
         </div>
         <div id="Stok-Menu" class="py-3 menu-option mt-3">
@@ -49,7 +48,7 @@
         </div>
 
         <div id="Report-Menu" class="py-3 menu-option mt-3">
-          <a href="Admin_Report" class="d-flex align-items-center text-decoration-none">
+          <a href="{{ route('AdminReport') }}" class="d-flex align-items-center text-decoration-none">
             <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Report.svg">
             <span class="text-dark">Report</span>
           </a>

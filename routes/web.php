@@ -1,12 +1,17 @@
 <?php
 
+use App\Models\Supplier;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\BarangController;
-use App\Http\Controllers\PenjualanController;
-use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\DetailPemesananController;
 use App\Http\Controllers\sessionController;
-use App\Models\Supplier;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\PenjualanController;
+use App\Models\Detail_Pemesanan;
 
 /*
 |--------------------------------------------------------------------------
@@ -97,10 +102,6 @@ Route::middleware(['auth', 'user-role:Admin'])->group(function () {
 });
 
 
-
-
-
-
 //Create for table penjualan
 Route::get('/Staff_Payment', function () {
     return view('Staff_Page.Staff_Payment');
@@ -123,6 +124,9 @@ Route::get('/Admin_Sales_Page', [PenjualanController::class, 'index']);
 Route::get('/Staff_Stock', function () {
     return view('Staff_Page.Staff_Stock_Page');
 });
+/* Route::get('/Staff_Order', function () {
+    return view('Staff_Page.Staff_Order');
+})->name('StaffOrder'); */
 
 Route::view('/Admin_Stock_Barang', 'Admin_Page.Stock')->name('AdminStockPage');
 Route::view('/Admin_Account', 'Admin_Page.Admin_Account')->name('AdminAccount');
@@ -138,8 +142,7 @@ Route::view('/Staff_Stock_Page', 'Staff_Page.Staff_Stock_Page')->name('StaffStoc
 // Route::view('/Staff_Payment_Page', 'Staff_Page.Staff_Payment')->name('StaffPayment');
 Route::view('/Staff_Supplier_Page', 'Staff_Page.Staff_Supplier')->name('StaffSupplier');
 Route::view('/Staff_Account_Page', 'Staff_Page.Staff_Account')->name('StaffAccount');
-
-
+// Route::view('Staff/Payment', 'Staff_Page.Staff_Paymentt')->name('StaffPaymentt');
 
 
 
@@ -149,20 +152,22 @@ Route::get('/StockMasuk', function () {
 Route::get('/StockKeluar', function () {
     return view('Admin_Page.Stock_stockKeluar');
 });
+Route::get('/StockKeluar', function () {
+    return view('Admin_Page.Report');
+})->name('AdminReport');
 
 
 Route::resource('user', UserController::class);
-
 Route::resource('penjualan', PenjualanController::class);
-
 Route::resource('barang', BarangController::class);
-
 Route::resource('supplier', SupplierController::class);
+Route::resource('order', OrderController::class);
+Route::resource('pembayaran', PembayaranController::class);
+Route::resource('detailpemesanan', DetailPemesananController::class);
 
 Route::get('/tampilkanbarang/{id}', [BarangController::class, 'show'])->name('tampilkanbarang');
 Route::get('/Hapusbarang/{id}', [BarangController::class, 'destroy'])->name('Hapusbarang');
 Route::post('/updatebarang/{id}', [BarangController::class, 'update'])->name('Updatebarang');
-
 
 Route::get('/tampilkansupplier/{id}', [SupplierController::class, 'show'])->name('tampilkansupplier');
 Route::get('/Hapussupplier/{id}', [SupplierController::class, 'destroy'])->name('Hapussupplier');
@@ -176,4 +181,14 @@ Route::get('/tampilkanPenjualan/{id}', [PenjualanController::class, 'show'])->na
 Route::get('/HapusPenjualan/{id}', [PenjualanController::class, 'destroy'])->name('HapusPenjualan');
 Route::post('/updatePenjualan/{id}', [PenjualanController::class, 'update'])->name('UpdatePenjualan');
 
+
+Route::post('/Staff/Keranjang/Store', [OrderController::class, 'store'])->name('StaffOrderStore');
+Route::post('/Staff/Keranjang/add', [KeranjangController::class, 'add'])->name('StaffKeranjang');
+Route::post('/Staff/Keranjang/Tambah', [KeranjangController::class, 'plus'])->name('StaffTambahQuantity');
+Route::post('/Staff/Keranjang/Minus', [KeranjangController::class, 'minus'])->name('StaffKurangQuantity');
+Route::delete('/Staff/Keranjang/Delete', [KeranjangController::class, 'delete'])->name('StaffKeranjangDelete');
+// Route::put('/Staff/Keranjang/Update', [KeranjangController::class, 'update'])->name('StaffKeranjang');
+
+Route::get('Staff/Order', [KeranjangController::class, 'index'])->name('StaffOrder');
+Route::get('Admin/Tampil/Payment', [PembayaranController::class, 'Tampil'])->name('AdminTampilPayment');
 

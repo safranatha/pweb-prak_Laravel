@@ -27,7 +27,7 @@
                     </a>
                 </div>
                 <div id="Payment-Menu" class="py-3 menu-option mt-3">
-                    <a href="Admin_Sales_Page" class="d-flex align-items-center text-decoration-none">
+                    <a href="{{ route('AdminTampilPayment')}}" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="/Image/Vector/Payment.svg">
                         <span class="text-dark">Penjualan</span>
 
@@ -48,7 +48,7 @@
                 </div>
 
                 <div id="Report-Menu" class="py-3 menu-option mt-3 bg-dark rounded-pill d-flex align-items-center">
-                    <a href="Admin_Report" class="d-flex align-items-center text-decoration-none">
+                    <a href="{{ route('AdminReport') }}" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3 bg-light px-1" src="/Image/Vector/Report.svg">
                         <span class="text-light">Report</span>
                     </a>
@@ -62,7 +62,7 @@
                 </div>
 
                 <div id="SignOut-Menu" class="py-3 menu-option mt-3">
-                    <a href="Landing_Page" class="d-flex align-items-center text-decoration-none">
+                    <a href="{{ route('Logout') }}" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="/Image/Vector/SignOut.svg">
                         <span class="text-dark">Sign Out</span>
                     </a>

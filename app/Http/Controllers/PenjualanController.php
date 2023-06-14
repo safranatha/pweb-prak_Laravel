@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Penjualan;
+use Illuminate\Http\Request;
 use App\Http\Requests\StorePenjualanRequest;
 use App\Http\Requests\UpdatePenjualanRequest;
 
@@ -11,12 +12,26 @@ class PenjualanController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $penjualan = Penjualan::orderBy('Date','desc')->paginate(3);
-        
-        return view('Admin_Page.Sales_Page',['penjualan' => $penjualan]);
+        $query = Penjualan::query();
+        $nama_keyword = $request->id;
+        if (!empty($nama_keyword)) {
+            $query->where('id', 'LIKE', "%$nama_keyword%");
+        }
+        /* $status_keyword = $request->Status;
+        if (!empty($status_keyword)) {
+            $query->where('Status', 'LIKE', "%$status_keyword%");
+        } */
+        $tanggal_keyword = $request->Tanggal;
+        if (!empty($tanggal_keyword)) {
+            $query->where('Date', 'LIKE', "%$tanggal_keyword%");
+        }
 
+        $penjualan = $query->paginate(10);
+        // $penjualan = Penjualan::orderBy('Date', 'desc')->paginate(3);
+
+        return view('Admin_Page.Sales_Page', ['penjualan' => $penjualan]);
     }
 
     /**
@@ -25,7 +40,6 @@ class PenjualanController extends Controller
     public function create()
     {
         return view("Staff_Page.Staff_Payment");
-
     }
 
     /**
@@ -35,7 +49,7 @@ class PenjualanController extends Controller
     {
         // $data=[
         //     // 'Invoice_id'=>$request->Invoice_id,
-            
+
         // ];
         // dd($request->all());
         Penjualan::create($request->all());
@@ -66,14 +80,14 @@ class PenjualanController extends Controller
     public function update(UpdatePenjualanRequest $request, $id)
     {
         $penjualan = Penjualan::find($id);
-        $penjualan -> update($request->all());
-        return redirect()->route('penjualan.index')->with('success','Data berhasil di update');
+        $penjualan->update($request->all());
+        return redirect()->route('penjualan.index')->with('success', 'Data berhasil di update');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Penjualan $penjualan,$id)
+    public function destroy(Penjualan $penjualan, $id)
     {
         $penjualan = Penjualan::find($id);
         $penjualan->delete();

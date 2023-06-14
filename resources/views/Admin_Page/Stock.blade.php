@@ -27,7 +27,7 @@
                     </a>
                 </div>
                 <div id="Payment-Menu" class="py-3 menu-option mt-3">
-                    <a href="{{ route('penjualan.index') }}" class="d-flex align-items-center text-decoration-none">
+                    <a href="{{ route('AdminTampilPayment')}}" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Payment.svg">
                         <span class="text-dark">Penjualan</span>
 

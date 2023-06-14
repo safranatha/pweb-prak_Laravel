@@ -146,3 +146,14 @@ input::placeholder{
     width:80%;
     height:100%;
 }
+
+/* .input-plus-minus,.Jumlah_barang-container,.cancel-buy-btn {
+    display:flex;
+    flex-direction: row;
+    gap:20px;
+}
+
+.Jumlah_barang-btn{
+    width: 40px;
+    height: 40px;
+} */

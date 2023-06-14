@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin || Payment</title>
-    <link rel="stylesheet" href="front/css/bootstrap.css">
-    <link rel="stylesheet" href="css/SalesPage.css">
-    <link rel="icon" href="Image/Image/minimarket.png">
+    <link rel="stylesheet" href="{{ asset('front/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/SalesPage.css') }}">
+    <link rel="icon" href="{{ asset('Image/Image/minimarket.png') }}">
 </head>
 
 <body>
@@ -16,54 +16,53 @@
         <div class="row">
             <div id="sidebar" class="col-md-2 bg-transparent position-fixed h-100">
                 <div class=" d-flex flex-row gap-2 align-items-center justify-content-center mt-2">
-                    <img class="Icon-Nav-Title" src="Image/Image/minimarket.png">
+                    <img class="Icon-Nav-Title" src="{{ asset('Image/Image/minimarket.png') }}">
                     <h5 class="text-center py-3">Payment & Inventory App</h5>
                 </div>
                 <div id="Dashboard-Menu"
                     class="py-3  rounded-pill d-flex align-items-center justify-content-start menu-option mt-5">
-                    <a href="Admin_Dashboard" class="d-flex align-items-center text-decoration-none text-dark">
-                        <img id="Home-Icon" class="Icon-Nav  ms-5 me-3" src="Image/Vector/Home.svg">
+                    <a href="{{ route('AdminDashboard') }}" class="d-flex align-items-center text-decoration-none text-dark">
+                        <img id="Home-Icon" class="Icon-Nav  ms-5 me-3" src="{{ asset('Image/Vector/Home.svg') }}">
                         <span class="Desc-Menu" class="text-dark">Dashboard</span>
                     </a>
                 </div>
                 <div id="Payment-Menu" class="py-3 menu-option mt-3 bg-dark rounded-pill d-flex align-items-center">
-                    <a href="Admin_Sales_Page" class="d-flex align-items-center text-decoration-none">
-                        <img class="Icon-Nav ms-5 me-3 bg-light" src="Image/Vector/Payment.svg">
+                    <a href="{{ route('AdminTampilPayment')}}" class="d-flex align-items-center text-decoration-none">
+                        <img class="Icon-Nav ms-5 me-3 bg-light" src="{{ asset('Image/Vector/Payment.svg') }}">
                         <span class="text-light">Penjualan</span>
-
                     </a>
                 </div>
                 <div id="Stok-Menu" class="py-3 menu-option mt-3">
-                    <a href="Admin_Stock_Barang" class="d-flex align-items-center text-decoration-none">
-                        <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Stuff.svg">
+                    <a href="{{ route('AdminStockPage') }}" class="d-flex align-items-center text-decoration-none">
+                        <img class="Icon-Nav ms-5 me-3" src="{{ asset('Image/Vector/Stuff.svg') }}">
                         <span class="text-dark">Stok Barang</span>
                     </a>
                 </div>
 
                 <div id="Supplier-Menu" class="py-3 menu-option mt-3">
                     <a href="{{ route('supplier.index') }}" class="d-flex align-items-center text-decoration-none">
-                        <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Supplier.svg">
+                        <img class="Icon-Nav ms-5 me-3" src="{{ asset('Image/Vector/Supplier.svg') }}">
                         <span class="text-dark">Supplier</span>
                     </a>
                 </div>
 
                 <div id="Report-Menu" class="py-3 menu-option mt-3">
-                    <a href="Admin_Report" class="d-flex align-items-center text-decoration-none">
-                        <img class="Icon-Nav ms-5 me-3" src="Image/Vector/Report.svg">
+                    <a href="{{ route('AdminReport') }}" class="d-flex align-items-center text-decoration-none">
+                        <img class="Icon-Nav ms-5 me-3" src="{{ asset('Image/Vector/Report.svg') }}">
                         <span class="text-dark">Report</span>
                     </a>
                 </div>
 
                 <div id="Akun-Menu" class="py-3 menu-option mt-3">
                     <a href="{{ route('user.index') }}" class="d-flex align-items-center text-decoration-none">
-                        <img class="Icon-Nav ms-5 me-3" src="Image/Vector/User.svg">
+                        <img class="Icon-Nav ms-5 me-3" src="{{ asset('Image/Vector/User.svg') }}">
                         <span class="text-dark">User Managenent</span>
                     </a>
                 </div>
 
                 <div id="SignOut-Menu" class="py-3 menu-option mt-3">
-                    <a href="Landing_Page" class="d-flex align-items-center text-decoration-none">
-                        <img class="Icon-Nav ms-5 me-3" src="Image/Vector/SignOut.svg">
+                    <a href="{{ route('Logout') }}" class="d-flex align-items-center text-decoration-none">
+                        <img class="Icon-Nav ms-5 me-3" src="{{ asset('Image/Vector/SignOut.svg') }}">
                         <span class="text-dark">Sign Out</span>
                     </a>
                 </div>
@@ -74,10 +73,10 @@
                         <p class="navbar-brand">Hello, Admin</p>
                         <div class="navbar-nav ms-auto">
                             <a class="nav-link" href="#">
-                                <img class="Icon-Nav" src="Image/Vector/Search.svg">
+                                <img class="Icon-Nav" src="{{ asset('Image/Vector/Search.svg') }}">
                             </a>
                             <a class="nav-link" href="User_Page.html">
-                                <img class="Icon-Nav" src="Image/Vector/Admin-Icon.svg">
+                                <img class="Icon-Nav" src="{{ asset('Image/Vector/Admin-Icon.svg') }}">
                             </a>
                         </div>
                     </div>
@@ -87,19 +86,19 @@
 
                 <div class="container ms-3 my-5" id="table-title">
                     <h5 class="pb-4">History Pembayaran</h5>
-                    <form action="" method="post">
+                    <form action="{{ route('penjualan.index') }}" method="get">
                         <div class="row gy-3">
                             <div class="col-md-3 ">
                                 <p>Invoice Id</p>
-                                <input type="text" class="form-control mb-2" placeholder="Input Invoice Id" required>
+                                <input type="text" class="form-control mb-2" name="id" placeholder="Input Invoice Id">
                             </div>
                             <div class="col-md-3">
                                 <p>Tanggal</p>
-                                <input type="date" class="form-control mb-2" required>
+                                <input type="date" class="form-control mb-2" name="Tanggal">
                             </div>
                             <div class="col-md-3">
                                 <p>Payment Method</p>
-                                <select class="form-select" id="inputGroupSelect01">
+                                <select name="Status" class="form-select" id="inputGroupSelect01">
                                     <option selected>Choose...</option>
                                     <option value="1">Cash</option>
                                     <option value="2">Credit</option>
@@ -118,35 +117,27 @@
                             <tr>
                                 <th>No</th>
                                 <th>Inovice id</th>
-                                <th>Total</th>
-                                <th>Date</th>
-                                <th>Metode Pembayaran</th>
+                                <th>Tanggal</th>
+                                <th>Id Pemesanan</th>
                                 <th>Status Pembayaran</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $i = $penjualan->firstItem(); ?>
-                            @foreach ($penjualan as $item)
+                            @php
+                                $no = 1;
+                            @endphp
+                            @foreach ($pembayaran as $item)
                                 <tr>
-                                    <td>{{ $i }}</td>
-                                    <td>{{ $item->id }}</td>
-                                    <td>{{ $item->Total }}</td>
-                                    <td>{{ $item->Date }}</td>
-                                    <td>{{ $item->Method }}</td>
-                                    <td>{{ $item->Status }}</td>
-                                    <td><a href="/tampilkanPenjualan/{{ $item->id }}" id="edit-delete-button"
-                                            type="button" class="btn btn-primary"><img id="edit-icon"
-                                                src="{{ asset('Icon/pen-solid.png') }}"> </td>
-                                    <td><a href="/HapusPenjualan/{{ $item->id }}" type="submit"
-                                            id="edit-delete-button" type="button" class="btn btn-danger"><img
-                                                id="delete-icon" src="{{ asset('Icon/trash-solid.png') }}"></button>
-                                    </td>
+                                    <td>{{ /* $item->id */ $no++ }}</td>
+                                    <td>{{ $item->id}}</td>
+                                    <td>{{ $item->created_at }}</td>
+                                    <td>{{ $item->pemesanan_id }}</td>
+                                    <td>{{ $item->status }}</td>
                                 </tr>
-                                <?php $i++; ?>
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $penjualan->links() }}
+                    {{-- {{ $penjualan->links() }} --}}
                 </div>
 
 

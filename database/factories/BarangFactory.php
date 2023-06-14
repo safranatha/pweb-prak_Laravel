@@ -20,6 +20,7 @@ class BarangFactory extends Factory
             'Nama_barang'=>fake()->colorName(),
             'Kategori_barang'=>fake()->name(),
             'Jumlah_barang'=>fake()->randomNumber(),
+            'Harga_barang'=>fake()->randomNumber(),
             'Tanggal'=>fake()->date(),
             'Supplier'=>fake()->name(),
         ];
