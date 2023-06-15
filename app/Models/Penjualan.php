@@ -10,6 +10,6 @@ class Penjualan extends Model
     use HasFactory;
 
     protected $fillable = ['Total','Date','Method','Status'];
-    
+
     public $timestamps = false;
 }

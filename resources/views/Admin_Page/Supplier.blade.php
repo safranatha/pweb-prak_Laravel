@@ -21,16 +21,15 @@
                 </div>
                 <div id="Dashboard-Menu"
                     class="py-3  rounded-pill d-flex align-items-center justify-content-start menu-option mt-5">
-                    <a href="Admin_Dashboard" class="d-flex align-items-center text-decoration-none text-dark">
+                    <a href="{{ route('AdminTampilPayment')}}" class="d-flex align-items-center text-decoration-none text-dark">
                         <img id="Home-Icon" class="Icon-Nav  ms-5 me-3" src="{{ asset('Image/Vector/Home.svg') }}">
                         <span class="Desc-Menu" class="text-dark">Dashboard</span>
                     </a>
                 </div>
                 <div id="Payment-Menu" class="py-3 menu-option mt-3">
-                    <a href="Admin_Sales_Page" class="d-flex align-items-center text-decoration-none">
+                    <a href="{{ route('AdminTampilPayment')}}" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="{{ asset('Image/Vector/Payment.svg') }}">
                         <span class="text-dark">Penjualan</span>
-
                     </a>
                 </div>
                 <div id="Stok-Menu" class="py-3 menu-option mt-3">
@@ -48,7 +47,7 @@
                 </div>
 
                 <div id="Report-Menu" class="py-3 menu-option mt-3">
-                    <a href="Admin_Report" class="d-flex align-items-center text-decoration-none">
+                    <a href="{{ route('AdminReport') }}" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="{{ asset('Image/Vector/Report.svg') }}">
                         <span class="text-dark">Report</span>
                     </a>
@@ -62,7 +61,7 @@
                 </div>
 
                 <div id="SignOut-Menu" class="py-3 menu-option mt-3">
-                    <a href="Landing_Page" class="d-flex align-items-center text-decoration-none">
+                    <a href="{{ route('Logout') }}" class="d-flex align-items-center text-decoration-none">
                         <img class="Icon-Nav ms-5 me-3" src="{{ asset('Image/Vector/SignOut.svg') }}">
                         <span class="text-dark">Sign Out</span>
                     </a>
