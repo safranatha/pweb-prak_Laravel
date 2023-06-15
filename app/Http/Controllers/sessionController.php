@@ -22,6 +22,10 @@ class sessionController extends Controller
 
     public function registeruser(Request $request)
     {
+        $existingUser = User::where('email', $request->email)->first();
+        if ($existingUser) {
+            return back()->with('RegisterError', 'Register Failed');
+        }
         $user = User::create([
             'username' => $request->username,
             'email' => $request->email,
@@ -35,6 +39,10 @@ class sessionController extends Controller
 
     public function registerAdmin(Request $request)
     {
+        $existingUser = User::where('email', $request->email)->first();
+        if ($existingUser) {
+            return back()->with('RegisterError', 'Register Failed');
+        }
         $user = User::create([
             'username' => $request->username,
             'email' => $request->email,
@@ -66,8 +74,7 @@ class sessionController extends Controller
             //success
             if (auth()->user()->role == 'Admin') {
                 return redirect()->route('AdminDashboard')->with('success', 'Berhasil Login');
-            }
-            else if(auth()->user()->role == 'Staff'){
+            } else if (auth()->user()->role == 'Staff') {
                 return redirect()->route('pembayaran.index')->with('success', 'Berhasil Login');
             }
         } else {
@@ -77,7 +84,8 @@ class sessionController extends Controller
         }
     }
 
-    function logout (Request $request){
+    function logout(Request $request)
+    {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();

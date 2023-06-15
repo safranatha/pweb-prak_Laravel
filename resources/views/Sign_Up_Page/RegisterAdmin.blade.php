@@ -17,6 +17,12 @@
     <p class=" text-center mt-4" style="font-size: 18px;">Please Fill Out This Form to Start Creating an Account</p>
 
       <form action="{{ route('AdminRegisterPost') }}" method="POST" class="w-25 mt-2 needs-validation" novalidate>
+      @if (session()->has('RegisterError'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('RegisterError') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+                </div>
+            @endif
         @csrf
         <div class="mb-4 d-flex flex-row">
           <img id="Full_Name" src="Image/Vector/User.svg" class="mb-3" alt="User Icon" style="width: 15px; margin-right: 10px;">
