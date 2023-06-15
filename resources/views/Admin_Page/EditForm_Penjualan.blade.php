@@ -86,7 +86,7 @@
                 <!-- end of navbar -->
 
                     <div class="container w-50 d-flex flex-column justify-content-center gap-5 bg-light mt-5 mb-5">
-                        <h1 class="text-center mt-5">Edit Stok supplier Masuk</h1>
+                        <h1 class="text-center mt-5">Edit Penjualan</h1>
                         <form action="{{ route('UpdatePenjualan', $penjualan->id) }}" id="formpenjualan" method="POST"
                             class="d-flex flex-column gap-4">
                             @csrf
