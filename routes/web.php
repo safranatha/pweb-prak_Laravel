@@ -191,4 +191,5 @@ Route::delete('/Staff/Keranjang/Delete', [KeranjangController::class, 'delete'])
 
 Route::get('Staff/Order', [KeranjangController::class, 'index'])->name('StaffOrder');
 Route::get('Admin/Tampil/Payment', [PembayaranController::class, 'Tampil'])->name('AdminTampilPayment');
+Route::get('Admin/Tampil/StockKeluar', [PembayaranController::class, 'TampilPembayaran'])->name('AdminTampilPStockKeluar');
 

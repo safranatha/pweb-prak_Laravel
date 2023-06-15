@@ -79,4 +79,23 @@ class PembayaranController extends Controller
         $pembayaran = pembayaran::all();
         return view('Admin_Page.Sales_Page', ['pembayaran' => $pembayaran]);
     }
+
+    public function TampilPembayaran(){
+            $pembayaran = Pembayaran::all();
+            // $pemesanan = Order::with('products');
+            // dd($pemesanan);
+            /* $data = [];
+
+            foreach ($pembayaran as $p) {
+                $order = $p->Pemesanan;
+                $details = $order->orderDetails;
+
+                foreach ($details as $detail) {
+                    $barangId = $detail->barang_id;
+                    $data[] = $barangId;
+                }
+            }
+            dd($data); */
+            return view('Admin_Page.Stock_stockKeluar', ['pembayaran' => $pembayaran]);
+    }
 }

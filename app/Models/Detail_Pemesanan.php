@@ -22,7 +22,7 @@ class Detail_Pemesanan extends Model
         return $this->belongsTo(Order::class);
     }
 
-    public function product() {
+    public function product() { 
         return $this->belongsTo(Barang::class);
     }
 

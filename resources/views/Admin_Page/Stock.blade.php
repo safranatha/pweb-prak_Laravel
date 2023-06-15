@@ -93,7 +93,7 @@
                             <p class="pt-3">Stok Masuk</p>
                           </div>
                         </a>
-                        <a href="StockKeluar" class="w-75 h-50  text-decoration-none ">
+                        <a href="{{ route('AdminTampilPStockKeluar') }}" class="w-75 h-50  text-decoration-none ">
                           <div id="Amount-2" class="Dash-Option h-100 rounded d-flex justify-content-center align-items-center" style="box-shadow: 3px 3px 8px #888888;">
                             <p class="pt-3">Stok Keluar</p>
                           </div>
