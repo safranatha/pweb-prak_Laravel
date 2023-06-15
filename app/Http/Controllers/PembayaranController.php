@@ -76,9 +76,11 @@ class PembayaranController extends Controller
     }
 
     public function Tampil(){
-        $pembayaran = pembayaran::all();
+        $pembayaran = pembayaran::orderBy('created_at','desc')->get();
         return view('Admin_Page.Sales_Page', ['pembayaran' => $pembayaran]);
     }
+
+    // $data= tes2Laravel::orderBy('Invoice_id','desc')->get();
 
     public function TampilPembayaran(){
             $pembayaran = Pembayaran::all();
