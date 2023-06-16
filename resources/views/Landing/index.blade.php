@@ -139,15 +139,16 @@
           </div>
           <div class="row justify-content-center">
             <div class="col-md-7">
-              <form>
+              <form action="{{route('contact.store')}}" id="formContact" method="post">
+                @csrf
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label"
-                    >Name</label
-                  >
+                    >Name</label>
                   <input
                     type="text"
                     class="form-control"
                     id="name"
+                    name="name"
                     aria-describedby="name" />
                 </div>
                 <div class="mb-3">
@@ -156,6 +157,7 @@
                   >
                   <input
                     type="email"
+                    name="email"
                     class="form-control"
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp" />
@@ -166,6 +168,7 @@
                   >
                   <textarea
                     class="form-control"
+                    name="pesan"
                     id="exampleFormControlTextarea1"
                     rows="3"></textarea>
                 </div>

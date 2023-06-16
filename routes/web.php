@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\contactController;
 use App\Http\Controllers\DetailPemesananController;
 use App\Http\Controllers\sessionController;
 use App\Http\Controllers\SupplierController;
@@ -158,6 +159,7 @@ Route::get('/StockKeluar', function () {
 
 
 Route::resource('user', UserController::class);
+Route::resource('contact', contactController::class);
 Route::resource('penjualan', PenjualanController::class);
 Route::resource('barang', BarangController::class);
 Route::resource('supplier', SupplierController::class);
