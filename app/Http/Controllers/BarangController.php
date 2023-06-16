@@ -31,7 +31,7 @@ class BarangController extends Controller
     if(!empty($tanggal_keyword)){
         $query->where('Tanggal', 'LIKE', "%$tanggal_keyword%");
     }
-
+    $query->orderBy('Nama_barang','asc');
     $barang = $query -> paginate(3);
     return view('Admin_Page.Stock_stockMasuk', ['barang' => $barang]);
 }
